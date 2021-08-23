@@ -63,16 +63,10 @@ class DemenagementType extends AbstractType
                 'expanded' => true,
                 'required' => true,
                 'data' => 'non',
-                'label' => 'Date et heure flexible:'])
-            ->add('bagage',ChoiceType::class, [
-                'choices' => $choice,
-                'expanded' => true,
-                'required' => true,
-                'data' => 'non',
-                'label' => 'Bagage'
-            ])
+                'label' => 'Date et heure souhaitées:'])
+
             ->add('descriptionbagage',TextareaType::class, [
-                'label' => 'Description bagage:'
+                'label' => 'Description démanagement:'
             ])
         ;
     }
@@ -84,4 +78,3 @@ class DemenagementType extends AbstractType
         ]);
     }
 }
-
