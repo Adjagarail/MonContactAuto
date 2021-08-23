@@ -53,15 +53,15 @@ class TransportType extends AbstractType
                 'label' => "Ville d'arrivée:",
                 'required' => false
             ])
-            ->add('deposerAt',DateTimeType::class,[
-                'label' => 'Date et heure'
-            ])
             ->add('statut',ChoiceType::class, [
                 'choices' => $arriver,
                 'expanded' => true,
                 'required' => true,
                 'data' => 'non',
-                'label' => false])
+                'label' => 'Date et heure:'
+                ])
+            ->add('deposerAt',DateTimeType::class,[
+            ])
             ->add('nombrepersonne', TextType::class, [
                 'label' => 'Nombre de personne:'
             ])
