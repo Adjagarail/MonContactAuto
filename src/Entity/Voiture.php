@@ -119,10 +119,6 @@ class Voiture
 
     /**
      * @ORM\Column(type="integer", nullable=true)
-     * * @Assert\Length(
-     *     min=2,
-     *     minMessage="Le nombre de place minimal est de 2"
-     * )
      */
     private $place;
 

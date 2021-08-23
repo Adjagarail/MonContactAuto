@@ -77,19 +77,22 @@ class VoitureDataType extends AbstractType
                'placeholder' => 'Type de véhicule',
                'mapped' => true,
                'expanded' => false,
-               'label' => false
+               'label' => false,
+               'required' => false 	
            ])
            ->add('years', ChoiceType::class,[
                'choices' => $years,
                'expanded' => false,
                'placeholder' => 'Année de la voiture',
-               'label' => false
+               'label' => false,
+               'required' => false   
            ])
            ->add('marques', EntityType::class, [
                'class' => Marques::class,
                'placeholder' => 'Marques',
                'mapped' => true,
-               'label' => false
+               'label' => false,
+               'required' => false
            ])
 
            ->add('carburant', ChoiceType::class,[
@@ -97,7 +100,8 @@ class VoitureDataType extends AbstractType
                'expanded' => false,
                'placeholder' => 'Carburant',
                'data' => 'Gasoil',
-               'label' => false
+               'label' => false,
+               'required' => false
 
            ])
            ->add('transmission', ChoiceType::class,[
@@ -105,8 +109,9 @@ class VoitureDataType extends AbstractType
                'choices' => $transmission,
                'expanded' => false,
                'data' => 'transmission',
-               'placeholder' => 'Carburant',
-               'label' => false
+               'placeholder' => 'Transmission',
+               'label' => false,
+               'required' => false
            ])
            ;
      }
