@@ -21,13 +21,8 @@
 					<ul>
 						<li><i class="fa fa-road" aria-hidden="true"></i>{{ voiture.kilometrages}} km</li>
 						<li><i class="fa fa-user" aria-hidden="true"></i>{{ voiture.place}} places</li>
-						<li><i class="fa fa-calendar" aria-hidden="true"></i>{{ voiture.years}} model</li>
+						<li><i class="fa fa-calendar" aria-hidden="true"></i>{{ voiture.years}}</li>
 						<li><i class="fa fa-car" aria-hidden="true"></i>{{ voiture.carburant }}</li>
-						<li><i class="fa fa-cogs" aria-hidden="true"></i></i>
-							{% for option in voiture.options %}
-								{{ option.name }}
-							{% endfor %}
-						</li>
 
 					</ul>
 					<a href="{{ path('voiture_show1', {'id': voiture.id}) }}" class="btn">Voir détails <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></a>
