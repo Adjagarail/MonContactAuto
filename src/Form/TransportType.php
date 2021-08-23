@@ -56,7 +56,7 @@ class TransportType extends AbstractType
             ->add('deposerAt',DateTimeType::class,[
                 'label' => 'Date et heure'
             ])
-            ->add('$statut',ChoiceType::class, [
+            ->add('statut',ChoiceType::class, [
                 'choices' => $arriver,
                 'expanded' => true,
                 'required' => true,
