@@ -48,18 +48,18 @@ class SearchLocation extends AbstractType
                 'data' => '',
                 'required' => false
             ])
-            ->add('autreville', TextType::class, [
-                'label' => 'Autre Ville:',
-                'required' => false
-            ])
-            ->add('mintarif', NumberType::class, [
-                'label' => 'tarif min:',
-                'required' => false
-            ])
-            ->add('maxtarif', NumberType::class, [
-                'label' => 'tarif max:',
-                'required' => false
-            ])
+//            ->add('autreville', TextType::class, [
+//                'label' => 'Autre Ville:',
+//                'required' => false
+//            ])
+//            ->add('mintarif', NumberType::class, [
+//                'label' => 'tarif min:',
+//                'required' => false
+//            ])
+//            ->add('maxtarif', NumberType::class, [
+//                'label' => 'tarif max:',
+//                'required' => false
+//            ])
 
         ;
     }
