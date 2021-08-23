@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Demenagement;
 use App\Entity\Transport;
 use App\Form\DemenagementType;
 use App\Form\TransportType;
@@ -23,7 +24,7 @@ class TransportController extends AbstractController
      */
     public function demenagement(Request $request, CondemenagementRepository $condemenagementRepository): Response
     {
-        $demenagement = new Transport();
+        $demenagement = new Demenagement();
         $demenagement->setTransport('demenagement');
         $form = $this->createForm(DemenagementType::class, $demenagement);
         $form->handleRequest($request);
