@@ -22,6 +22,11 @@ class TransportType extends AbstractType
             'oui' => 'oui',
             'non' => 'non'
         ];
+        $arriver = [
+            'de départ' => 'de départ',
+            "d'arriver" => "d'arriver"
+        ];
+
         $builder
             ->add('nom', TextType::class, [
                 'label' => 'Nom:',
@@ -49,8 +54,14 @@ class TransportType extends AbstractType
                 'required' => false
             ])
             ->add('deposerAt',DateTimeType::class,[
-                'label' => 'Date et heure de disponibilité:'
+                'label' => 'Date et heure'
             ])
+            ->add('$statut',ChoiceType::class, [
+                'choices' => $arriver,
+                'expanded' => true,
+                'required' => true,
+                'data' => 'non',
+                'label' => false])
             ->add('nombrepersonne', TextType::class, [
                 'label' => 'Nombre de personne:'
             ])
@@ -59,7 +70,7 @@ class TransportType extends AbstractType
                 'expanded' => true,
                 'required' => true,
                 'data' => 'non',
-                'label' => 'Date flexible:'])
+                'label' => 'Date et heure flexible:'])
             ->add('bagage',ChoiceType::class, [
         'choices' => $choice,
         'expanded' => true,
