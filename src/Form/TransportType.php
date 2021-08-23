@@ -61,6 +61,7 @@ class TransportType extends AbstractType
                 'label' => 'Date et heure:'
                 ])
             ->add('deposerAt',DateTimeType::class,[
+                'label' => false
             ])
             ->add('nombrepersonne', TextType::class, [
                 'label' => 'Nombre de personne:'
