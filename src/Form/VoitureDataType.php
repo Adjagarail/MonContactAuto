@@ -106,7 +106,7 @@ class VoitureDataType extends AbstractType
                'choices' => $carburant,
                'expanded' => false,
                'placeholder' => 'Carburant',
-               'data' => 'Gasoil',
+               'data' => 'Carburant',
                'label' => false,
                'required' => false
 
