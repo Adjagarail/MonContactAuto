@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Transport;
+use App\Form\DemenagementType;
 use App\Form\TransportType;
 use App\Repository\CondemenagementRepository;
 use App\Repository\CondeposerRepository;
@@ -24,7 +25,7 @@ class TransportController extends AbstractController
     {
         $demenagement = new Transport();
         $demenagement->setTransport('demenagement');
-        $form = $this->createForm(TransportType::class, $demenagement);
+        $form = $this->createForm(DemenagementType::class, $demenagement);
         $form->handleRequest($request);
         $conditions = $condemenagementRepository->findAll();
 
