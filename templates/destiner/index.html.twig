@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Destiner index{% endblock %}
+
+{% block body %}
+    <h1>Destiner index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for destiner in destiners %}
+            <tr>
+                <td>{{ destiner.id }}</td>
+                <td>{{ destiner.name }}</td>
+                <td>
+                    <a href="{{ path('destiner_show', {'id': destiner.id}) }}">show</a>
+                    <a href="{{ path('destiner_edit', {'id': destiner.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('destiner_new') }}">Create new</a>
+{% endblock %}

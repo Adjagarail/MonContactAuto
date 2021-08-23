@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Demenagement{% endblock %}
+
+{% block body %}
+    {{ dump(transports) }}
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>mail</th>
+            <th>Ville de départ</th>
+            <th>Ville d'arrivé</th>
+            <th>Date souhaitée</th>
+            <th>Nombre de personne</th>
+            <th>Bagage</th>
+            <th>Description bagage</th>
+            <th>Date flexible</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for transport in transports %}
+            {% if transport.transport == 'demenagement' %}
+            <tr>
+                <td>{{ transport.nom }}</td>
+                <td>{{ transport.prenom }}</td>
+                <td>{{ transport.mail }}</td>
+                <td>{{ transport.villea }}</td>
+                <td>{{ transport.villed }}</td>
+                <td>{{ transport.deposerAt|date("m/d/Y", "Europe/Paris") }}</td>
+                <td>{{ transport.nombrepersonne }}</td>
+                <td>{{ transport.bagage }}</td>
+                <td>{{ transport.descriptionbagage }}</td>
+                <td>{{ transport.dateflexible }}</td>
+                <td>
+                    <a href="{{ path('client_show', {'id': transport.id}) }}">show</a>
+                    <a href="{{ path('client_edit', {'id': transport.id}) }}">edit</a>
+                </td>
+
+            </tr>
+            {% endif %}
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
+

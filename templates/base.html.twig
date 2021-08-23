@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>MonContactAuto</title>
+    <!--Bootstrap -->
+    <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('assets/css/sweetalert2.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('assets/css/sweetalert2.min.js')}}" type="text/css">
+    <!--Custome Style -->
+    <link rel="stylesheet" href="{{asset('assets/css/style.css ')}}" type="text/css">
+    <!--OWL Carousel slider-->
+    <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.css')}} " type="text/css">
+    <link rel="stylesheet" href="{{asset('assets/css/owl.transitions.css')}}" type="text/css">
+    <!--slick-slider -->
+    <link href="{{asset('assets/css/slick.css')}}" rel="stylesheet">
+    <!--bootstrap-slider -->
+    <link href="{{asset('assets/css/bootstrap-slider.min.css')}}" rel="stylesheet">
+    <!--FontAwesome Font Style -->
+
+    <link href="{{asset('assets/css/font-awesome.min.css')}}" rel="stylesheet">
+
+    <!-- Custom Colors -->
+    <link rel="stylesheet" href="{{asset('assets/colors/red.css')}}">
+    <!--<link rel="stylesheet" href="assets/colors/orange.css">-->
+    <!--<link rel="stylesheet" href="assets/colors/blue.css">-->
+    <!--<link rel="stylesheet" href="assets/colors/pink.css">-->
+    <!--<link rel="stylesheet" href="assets/colors/green.css">-->
+    <!--<link rel="stylesheet" href="assets/colors/purple.css">-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/favicon-icon/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/favicon-icon/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/favicon-icon/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/images/favicon-icon/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="assets/images/favicon-icon/favicon.png">
+    <!-- Google-Font-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        {{ encore_entry_link_tags('app') }}
+    {{ encore_entry_script_tags('app') | replace({'src=': 'defer src='}) | raw }}
+</head>
+<body>
+<div class="default-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 col-md-2">
+                <div class="logo"> <a href="{{ path('home') }}"><img src="../../../assets/images/logo-mon-contact-auto.jpeg" alt="image" style="width:79px;"/></a> </div>
+            </div>
+            <div class="col-sm-9 col-md-10">
+                <div class="header_info">
+                    <div class="header_widgets">
+                        <div class="circle_icon"> <i class="fa fa-envelope" aria-hidden="true"></i> </div>
+                        <p class="uppercase_text">Envoyez-nous un mail:</p>
+                        <a href="mailto:info@example.com">moncontactauto@gmail.com</a> </div>
+                    <div class="header_widgets">
+                        <div class="circle_icon"> <i class="fa fa-phone" aria-hidden="true"></i> </div>
+                        <p class="uppercase_text">Appelez-nous:</p>
+                        <a href="tel:61-1234-5678-09">+33 07 80 99 65 14</a> </div>
+                    <div class="social-follow">
+                        <ul>
+                            <li><a href="https://www.facebook.com/moncontactauto/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+                            <li><a href="https://instagram.com/moncontactauto?r=nametag" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.youtube.com/channel/UCpQDRC8b4ZkXnWDhB2F5Ihg/videos" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.snapchat.com/add/moncontactauto" target="_blank"><i class="fa fa fa-snapchat" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<nav id="navigation_bar" class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button id="menu_slide" data-target="#navigation" aria-expanded="false" data-toggle="collapse" class="navbar-toggle collapsed" type="button"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        </div>
+        <div class="header_wrap">
+
+            <div class="user_login">
+                <ul>
+                    <li> <a href="{{ path('panier') }}" data-toggle="" aria-haspopup="true" aria-expanded="false"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Votre panier <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navigation">
+            <ul class="nav navbar-nav">
+                <li><a href="{{ path('home') }}">accueil</a></li>
+                <li class="dropdown"><a href="{{ path('home_auto') }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Voiture</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('home_auto') }}">A la vente</a></li>
+                        <li><a href="{{ path('location') }}">Location</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Transport</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('transport1demenagement') }}">Déménagement</a></li>
+                        <li><a href="{{ path('transport1deposer') }}">Etre déposé</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AUTRES SERVICES</a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-header" style="color: whitesmoke !important;">Aide à l'achat</li>
+                        <li><a href="{{ path('expertises_new') }}">Confiez nous l'expertise d'un véhicule</a></li>
+                        <li><a href="{{ path('recherches_new') }}">Confiez nous la recherche de votre futur véhicule</a></li>
+                        <li class="dropdown-header" style="color: whitesmoke !important;">Convoyage de véhicule</li>
+                        <li><a href="{{ path('convoyages_new') }}"> Convoyage de véhicule</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="{{ path('quisommesnous') }}">Qui sommes nous</a></li>
+                <li><a href="{{ path('contact') }}">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+{% block body %}{% endblock %}
+
+<script src="{{asset('assets/js/jquery.min.js')}}"></script>
+<script src="{{asset('assets/js/filter.js')}}"></script>
+<script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('assets/js/interface.js')}}"></script>
+<!--bootstrap-slider-JS-->
+<script src="{{asset('assets/js/bootstrap-slider.min.js')}}"></script>
+<!--Slider-JS-->
+<script src="{{asset('assets/js/slick.min.js')}}"></script>
+<script src="{{asset('assets/js/owl.carousel.min.js')}}"></script>
+<script src="{{asset('assets/js/nouislider.min.js')}}"></script>
+<div id="back-top" class="back-top"> <a href="#top"><i class="fa fa-angle-up" aria-hidden="true"></i> </a> </div>
+
+<footer>
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <h6>S'INSCRIRE À LA NEWSLETTER</h6>
+                    <div class="newsletter-form">
+                            <div class="form-group">
+                                <input type="email" class="form-control newsletter-input" required placeholder="Entrer l'adresse e-mail" id="email1"/>
+                            </div>
+                            <button type="submit" class="btn btn-block" id="submit1">S'abonner <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></button>
+                        <p class="subscribed-text">*Nous envoyons des offres spéciales et les dernières nouvelles automobiles à nos utilisateurs abonnés.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-push-6 text-right">
+                    <div class="footer_widget">
+                        <p>Suivez nous:</p>
+                        <ul>
+                            <li><a href="https://www.facebook.com/moncontactauto/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+                            <li><a href="https://instagram.com/moncontactauto?r=nametag" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.youtube.com/channel/UCpQDRC8b4ZkXnWDhB2F5Ihg/videos" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.snapchat.com/add/moncontactauto" target="_blank"><i class="fa fa fa-snapchat" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-md-pull-6">
+                    <p class="copy-right">Copyright &copy; 2021 MonContactAuto.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

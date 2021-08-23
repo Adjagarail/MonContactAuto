@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit ConRecherche{% endblock %}
+
+{% block body %}
+    <h1>Edit ConRecherche</h1>
+
+    {{ include('con_recherche/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('con_recherche_index') }}">back to list</a>
+
+    {{ include('con_recherche/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PanierController!{% endblock %}
+
+{% block body %}
+
+  {% if contenupanier | length > 0 %}
+  <table class="table container">
+    <thead>
+    <tr>
+      <th>Marques</th>
+      <th>Kilometrage</th>
+      <th>Year</th>
+      <th>Images</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for voiture in contenupanier %}
+       <tr>
+         <td>{{ voiture.voiture.marques }}</td>
+         <td>{{ voiture.voiture.Kilometrages }}</td>
+         <td>{{ voiture.voiture.years }}</td>
+         <td>
+         {% for image in voiture.voiture.images %}
+           {% if voiture.voiture.images|first.name == image.name %}
+             <img src="{{ asset('/uploads/'~image.name) }}" alt="" class="img-fluid img-thumbnail" style="width: 500px">
+           {% endif %}
+         {% endfor %}
+         </td>
+         <td>
+           <a href="{{ path('cart_remove',{'id': voiture.voiture.id}) }}" class="btn btn-danger btn-sm">
+            <i class="fas fa-trash"></i>
+           </a>
+         </td>
+       </tr>
+    {% else %}
+      <tr>
+        <td colspan="6">no records found</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+    <tfoot>
+    <tr>
+      <td><div class="float-left"><button class="btn btn-primary float-right" onclick="window.location.href='{{ path('client_new') }}'">Finaliser votre commande</button></div></td>
+    </tr>
+    </tfoot>
+  </table>
+  {% else %}
+     vide
+  {% endif %}
+{% endblock %}

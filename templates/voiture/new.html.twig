@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Voiture{% endblock %}
+
+{% block body %}
+
+
+    <div class="container">
+        <br>
+        {{ include('voiture/_form.html.twig') }}
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            $("#voiture_destiner").click(function(){
+               if($("#voiture_destiner").val() === 'location'){
+                   $("#tarif1").show();
+                   $("#tarif2").show();
+                   $("#dispo2").show();
+                   $("#dispo1").show();
+                   $("#dispo11").show();
+                   $("#voiture_villeL").show();
+                   $("#voiture_villeL").show();
+                   $("#dispo11").show();
+                   $("#louer").show();
+
+               } else if ($("#voiture_destiner").val() === 'vente') {
+                   $("#tarif1").hide();
+                   $("#tarif2").hide();
+                   $("#dispo11").hide();
+                   $("#dispo1").hide();
+                   $("#dispo2").hide();
+                   $("#voiture_villeL").hide();
+                   $("#dispo11").hide();
+                   $("#louer").hide();
+                   $("#vendu1").show()
+               } else {
+
+               }
+
+            });
+        });
+    </script>
+{% endblock %}

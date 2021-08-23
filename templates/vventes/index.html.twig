@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vvente index{% endblock %}
+
+{% block body %}
+    <h1>Vvente index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Numero</th>
+                <th>Called</th>
+                <th>Ville</th>
+                <th>Demande</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for vvente in vventes %}
+            <tr>
+                <td>{{ vvente.id }}</td>
+                <td>{{ vvente.nom }}</td>
+                <td>{{ vvente.prenom }}</td>
+                <td>{{ vvente.numero }}</td>
+                <td>{{ vvente.called ? 'Yes' : 'No' }}</td>
+                <td>{{ vvente.ville }}</td>
+                <td>{{ vvente.demande }}</td>
+                <td>
+                    <a href="{{ path('vventes_show', {'id': vvente.id}) }}">show</a>
+                    <a href="{{ path('vventes_edit', {'id': vvente.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('vventes_new') }}">Create new</a>
+{% endblock %}

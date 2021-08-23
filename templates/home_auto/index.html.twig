@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vente{% endblock %}
+
+{% block body %}
+    <section class="page-header listing_page">
+        <div class="container">
+            <div class="page-header_wrap">
+                <div class="page-heading">
+                    <h1>Voiture en vente</h1>
+                </div>
+                <ul class="coustom-breadcrumb">
+                    <li><a href="{{ path('home') }}">Accueil</a></li>
+                    <li>Voiture en vente</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Dark Overlay-->
+        <div class="dark-overlay"></div>
+    </section>
+
+    <section class="listing-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 col-md-push-3">
+
+                    {% for voiture in voitures %}
+                        {% if voiture.destiner == 'vente' %}
+                            {% include 'home_auto/_card.html.twig' with {voiture: voiture} only %}
+                        {% endif %}
+                    {% endfor %}
+                            {{ knp_pagination_render(voitures)}}
+                </div>
+
+                <!--Side-Bar-->
+                {% include 'home_auto/_filter.html.twig' with {search: search} only %}
+                <!--/Side-Bar-->
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

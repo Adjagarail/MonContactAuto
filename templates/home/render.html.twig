@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+  <section class="page-header contactus_page">
+    <div class="container">
+      <div class="page-header_wrap">
+        <div class="page-heading">
+          <h1>Les résultats de votre recherche</h1>
+        </div>
+        <ul class="coustom-breadcrumb">
+          {% if voituresSearch|length > 1  %}
+          <li>{{ voituresSearch|length }} voitures ont été trouvé</li>
+          {% endif %}
+          {% if voituresSearch|length == 1  %}
+          <li>{{ voituresSearch|length }} voiture a été trouvé</li>
+          {% endif %}
+
+        </ul>
+      </div>
+    </div>
+    <!-- Dark Overlay-->
+    <div class="dark-overlay"></div>
+  </section>
+
+  <section class="listing-page">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9 col-md-push-3">
+          {% for voiture in voituresSearch %}
+
+              {% include 'home/_card.html.twig' with {voiture: voiture} only %}
+          {% endfor %}
+{#          {{ knp_pagination_render(voitures)}}#}
+        </div>
+
+        <!--Side-Bar-->
+        <!--/Side-Bar-->
+      </div>
+    </div>
+  </section>
+{% endblock %}

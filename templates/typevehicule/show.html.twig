@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Typevehicule{% endblock %}
+
+{% block body %}
+    <h1>Typevehicule</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ typevehicule.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ typevehicule.name }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <a href="{{ path('typevehicule_edit', {'id': typevehicule.id}) }}">edit</a>
+
+    {{ include('typevehicule/_delete_form.html.twig') }}
+{% endblock %}

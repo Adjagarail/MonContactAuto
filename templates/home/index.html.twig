@@ -1,0 +1,201 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+    <section id="banner2">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Wrapper for slides -->
+
+            <div class="carousel-inner">
+
+                {% for slider in infos %}
+                {% if loop.index == 1 %}
+                <div class="item active">
+                    {% else %}
+                    <div class="item">
+                        {% endif %}
+
+
+                        {% for image in slider.images %}
+                                <img src="{{ asset('/uploads/'~image.name) }}" alt="image" style="height: calc(100vh - 200px) !important; width: 100vw  !important; object-fit: cover;">
+                        {% endfor %}
+
+
+                        <div class="carousel-caption">
+                            <div class="banner_text text-center div_zindex white-text">
+                                <h1>{{ slider.titre }}</h1>
+                                <h3>{{ slider.message }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <div class="icon-prev"></div>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <div class="icon-next"></div>
+                </a>
+            </div>
+    </section>
+
+    {% for message in app.flashes('info') %}
+       <div class="alert alert-success">
+           {{ message }}
+       </div>
+    {% endfor %}
+
+
+    <section class="listing_other_info secondary-bg">
+        <div class="container">
+            <div id="filter_toggle" class="search_other"> <i class="fa fa-filter" aria-hidden="true"></i> Chercher une voiture </div>
+            <div id="other_info"><i class="fa fa-info-circle" aria-hidden="true"></i></div>
+            <div id="info_toggle">
+                <button type="button" data-toggle="modal" data-target="#schedule"> <i class="fa fa-car" aria-hidden="true"></i> Livraison gratuite </button>
+                <button type="button" data-toggle="modal" data-target="#make_offer"> <i class="fa fa-money" aria-hidden="true"></i> Paiement à la livraison </button>
+                <button type="button" data-toggle="modal" data-target="#email_friend"> <i class="fa fa-eye" aria-hidden="true"></i> La transparence de nos services </button>
+            </div>
+        </div>
+    </section>
+    <section  id="filter_form" class="inner-filter gray-bg">
+        {% include 'home/filter.html.twig' with {formSearch: formSearch} only %}
+    </section>
+
+    <section id="services" class="section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Car Dealer <span>Quality Services</span></h2>
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. </p>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="services_image"> <img src="assets/images/600x380.jpg" alt="image">
+                        <div class="service_heading white-text">
+                            <h3>Mon Contact Auto</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3>Looking <span>New Car?</span></h3>
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                    <br>
+                    <h4>At vero eos et accusamus et iusto odio dignissimos</h4>
+                    <ul class="list_style_none">
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Pellentesque lacus urna, feugiat non consectetur</li>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Aliquam sem neque, efficitur atero lectus vitae</li>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Pellentesque erat libero, eleifend sit amet felis</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="space-80"></div>
+        </div>
+    </section>
+    <div class="sidebar_widget sell_car_quote">
+        <div class="white-text div_zindex text-center">
+            <h3>On rachète votre voiture</h3>
+            <a href="{{ path('racheter1') }}" class="btn">Entrez en contact avec nous <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></a> </div>
+        <div class="dark-overlay"></div>
+    </div>
+
+    <section class="section-padding gray-bg">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Nos dernières voitures</h2>
+            </div>
+            <div class="row">
+
+                <!-- Nav tabs -->
+                <div class="recent-tab">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#resentnewcar" role="tab" data-toggle="tab">En vente</a></li>
+                        <li role="presentation"><a href="#resentusecar" role="tab" data-toggle="tab">En location</a></li>
+                    </ul>
+                </div>
+                <!-- Recently Listed New Cars -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="resentnewcar">
+                        {% for lastvoiture in lastvoitures %}
+                            <div class="col-list-3">
+                                <div class="recent-car-list">
+                                    <div class="car-info-box"> <a href="#">
+
+                                            {% for image in  lastvoiture.images %}
+                                                {% if lastvoiture.images|first.name == image.name %}
+                                                    <img src="{{ asset('/uploads/'~image.name) }}" alt="" class="img-responsive">
+                                                {% endif %}
+                                            {% endfor %}
+                                        </a>
+                                        <div class="compare_item">
+                                            <div class="checkbox">
+                                                <label for="compare4">En vente</label>
+                                            </div>
+                                        </div>
+                                        <ul>
+                                            <li><i class="fa fa-road" aria-hidden="true"></i>{{ lastvoiture.kilometrages }}</li>
+                                            <li><i class="fa fa-calendar" aria-hidden="true"></i>{{ lastvoiture.years }} Model</li>
+                                            <li><i class="fa fa-car" aria-hidden="true"></i>{{ lastvoiture.typevehicule}}</li>
+                                        </ul>
+                                    </div>
+                                    <div class="car-title-m">
+                                        <h6><a href="#">{{ lastvoiture.marques }}</a></h6>
+                                        <span class="price"><i class="fa fa-eur" aria-hidden="true"></i>{{ lastvoiture.prix }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <!-- Recently Listed Used Cars -->
+                    <div role="tabpanel" class="tab-pane" id="resentusecar">
+
+                        {% for lastvoiture in lastvoituress %}
+                                <div class="col-list-3">
+                                    <div class="recent-car-list">
+                                        <div class="car-info-box"> <a href="#">
+
+                                                {% for image in  lastvoiture.images %}
+                                                    {% if lastvoiture.images|first.name == image.name %}
+                                                        <img src="{{ asset('/uploads/'~image.name) }}" alt="" class="img-responsive">
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </a>
+                                            <div class="compare_item">
+                                                <div class="checkbox">
+                                                    <label for="compare4">Location</label>
+                                                </div>
+                                            </div>
+                                            <ul>
+                                                <li><i class="fa fa-road" aria-hidden="true"></i>{{ lastvoiture.kilometrages }} km</li>
+                                                <li><i class="fa fa-calendar" aria-hidden="true"></i>{{ lastvoiture.years }} Model</li>
+                                                <li><i class="fa fa-car" aria-hidden="true"></i>{{ lastvoiture.typevehicule}}</li>
+                                            </ul>
+
+                                        </div>
+                                        <div class="car-title-m">
+                                            <h6><a href="#">{{ lastvoiture.marques }}</a></h6>
+                                            <span class="price">{{ lastvoiture.tarif }} <i class="fa fa-eur" aria-hidden="true"></i> par jour</span>
+                                        </div>
+                                        <div class="car-title-m">
+                                            <h6><a href="#"></a></h6>
+                                            <span class="price">{{ lastvoiture.tarifs }} <i class="fa fa-eur" aria-hidden="true"></i> le mois</span>
+                                        </div>
+                                    </div>
+                                </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="{{asset('assets/js/filter.js')}}"></script>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('assets/js/filter.js') }}"></script>
+{% endblock %}

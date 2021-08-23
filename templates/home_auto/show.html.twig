@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <section class="page-header listing_page">
+        <div class="container">
+            <div class="page-header_wrap">
+                <div class="page-heading">
+                    <h1>Détails voitures</h1>
+                </div>
+                <ul class="coustom-breadcrumb">
+                    <li><a href="{{ path('home_auto') }}">Voiture en vente</a></li>
+                    <li>Détails voiture</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Dark Overlay-->
+        <div class="dark-overlay"></div>
+    </section>
+    <section id="listing_img_slider">
+        {% for voiture in voitures.images%}
+            <div><img src="{{ asset('/uploads/'~voiture.name) }}" class="img-responsive" alt="image"></div>
+        {% endfor %}
+    </section>
+<section class="listing_other_info secondary-bg">
+    <div class="container">
+        <div id="filter_toggle" class="search_other" onclick="window.location.href='{{ path('cart_add', {'id': voitures.id}) }}'"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Achetez la voiture </div>
+        <div id="other_info"><i class="fa fa-info-circle" aria-hidden="true"></i></div>
+        <div id="info_toggle">
+            {#<button type="button" data-toggle="modal" data-target="#schedule"> <i class="fa fa-car" aria-hidden="true"></i> Schedule Test Drive </button>
+            <button type="button" data-toggle="modal" data-target="#make_offer"> <i class="fa fa-money" aria-hidden="true"></i> Make an Offer </button>
+            <button type="button" data-toggle="modal" data-target="#email_friend"> <i class="fa fa-envelope" aria-hidden="true"></i> Email to a Friend </button>
+            <button type="button" data-toggle="modal" data-target="#more_info"> <i class="fa fa-file-text-o" aria-hidden="true"></i> Request More Info </button>#}
+        </div>
+    </div>
+</section>
+    <section class="listing-detail">
+        <div class="container">
+            <div class="listing_detail_head row">
+                <div class="col-md-9">
+                    <h2>{{ voitures.marques.name }}</h2>
+                    <div class="car-location"><span><i class="fa fa-map-marker" aria-hidden="true"></i> 12250 F Garvey Ave South West Covina, CA 91791</span></div>
+                </div>
+                <div class="col-md-3">
+                    <div class="price_info">
+                        <p><i class="fa fa-eur"></i>{{ voitures.prix }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="main_features">
+                        <ul>
+                            <li> <i class="fa fa-tachometer" aria-hidden="true"></i>
+                                <h5>{{ voitures.kilometrages }}</h5>
+                                <p>Kilomètres</p>
+                            </li>
+                            <li> <i class="fa fa-calendar" aria-hidden="true"></i>
+                                <h5>2010</h5>
+                                <p>Reg.Year</p>
+                            </li>
+                            <li> <i class="fa fa-cogs" aria-hidden="true"></i>
+                                <h5>{{ voitures.carburant }}</h5>
+                                <p>Carburant</p>
+                            </li>
+                            <li> <i class="fa fa-power-off" aria-hidden="true"></i>
+                                <h5>{{ voitures.transmission }}</h5>
+                                <p>Transmission</p>
+                            </li>
+                            <li> <i class="fa fa-user-plus" aria-hidden="true"></i>
+                                <h5>{{ voitures.place }}</h5>
+                                <p>Places</p>
+                            </li>
+                        </ul>
+                    </div>
+
+            </div>
+
+            <div class="space-20"></div>
+            <div class="divider"></div>
+
+
+
+        </div>
+    </section>
+{% endblock %}

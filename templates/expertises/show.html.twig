@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Expertise{% endblock %}
+
+{% block body %}
+    <h1>Expertise</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ expertise.id }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ expertise.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ expertise.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenomnomvendeur</th>
+                <td>{{ expertise.prenomnomvendeur }}</td>
+            </tr>
+            <tr>
+                <th>Telephonev</th>
+                <td>{{ expertise.telephonev }}</td>
+            </tr>
+            <tr>
+                <th>Telephonec</th>
+                <td>{{ expertise.telephonec }}</td>
+            </tr>
+            <tr>
+                <th>Lien</th>
+                <td>{{ expertise.lien }}</td>
+            </tr>
+            <tr>
+                <th>Adressev</th>
+                <td>{{ expertise.adressev }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+    <a href="{{ path('expertises_edit', {'id': expertise.id}) }}">edit</a>
+
+    {{ include('expertises/_delete_form.html.twig') }}
+{% endblock %}

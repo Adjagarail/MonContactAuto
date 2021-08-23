@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Voiture index{% endblock %}
+
+{% block body %}
+    <br>
+    <div class="container-fluid">
+
+        <a href="{{ path('voiture_new') }}" class="btn btn-success">Créer une nouvelle voiture</a>
+        <br>
+        <br>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Marque</th>
+                <th>Destinée</th>
+                <th>Kilometrage</th>
+                <th>Transmission</th>
+                <th>Images</th>
+                <th>Années</th>
+                <th>actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for voiture in voitures %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ voiture.marques }}</td>
+                    <td>{{ voiture.destiner }}</td>
+                    <td>{{ voiture.kilometrages }}</td>
+                    <td>
+                        {% for image in voiture.images %}
+                            {% if voiture.images|first.name == image.name %}
+                                <img src="{{ asset('/uploads/'~image.name) }}" alt="" class="img-fluid img-thumbnail" style="width: 500px">
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>{{ voiture.carburant }}</td>
+                    <td>{{ voiture.years }}</td>
+                    <td>
+                        <a href="{{ path('voiture_show', {'id': voiture.id}) }}"><i class="fa fa-eye" aria-hidden="true"></i> voir détails</a>  &nbsp;&nbsp;&nbsp;
+                        <a href="{{ path('voiture_edit', {'id': voiture.id}) }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modifier</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-center">
+            {{ knp_pagination_render(voitures)}}
+        </div>
+    </div>
+    <br>
+{% endblock %}

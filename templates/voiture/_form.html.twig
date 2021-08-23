@@ -1,0 +1,70 @@
+{{ form_start(form) }}
+   <div class="form-group">
+       {{ form_row(form.destiner) }}
+   </div>
+    <div class="form-group">
+       {{ form_row(form.typevehicule) }}
+    </div>
+
+    <div class="form-group">
+       {{ form_row(form.marques) }}
+    </div>
+    <div class="form-group">
+       {{ form_row(form.options) }}
+    </div>
+    <div class="form-group">
+       {{ form_row(form.modeles) }}
+    </div>
+
+
+
+    <div class="form-group">
+       {{ form_row(form.transmission) }}
+    </div>
+
+    <div class="form-group">
+       {{ form_row(form.place) }}
+    </div>
+
+    <div class="form-group" id="dispo11">
+       {{ form_row(form.disponible) }}
+    </div>
+    <div class="form-group" id="dispo1">
+    <div class="col">
+        {{ form_row(form.dispoAt) }}
+    </div>
+    <div class="col" id="dispo2">
+        {{ form_row(form.disposAt) }}
+    </div>
+    </div>
+
+    <div class="form-group" id="tarif1">
+       {{ form_row(form.tarif) }}
+    </div>
+    <div class="form-group" id="tarif2">
+       {{ form_row(form.tarifs) }}
+    </div>
+   <div class="form-group" id="voiture_villeL">
+       {{ form_row(form.villeL) }}
+    </div>
+       {{ form_row(form.kilometrages) }}
+       {{ form_row(form.images) }}
+       {{ form_row(form.years) }}
+       {{ form_row(form.prix) }}
+       {{ form_row(form.carburant) }}
+
+
+   </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <button class="btn">Sauvegarder</button>
+            </div>
+            <div class="col">
+                <a href="{{ path('voiture_index') }}">Retourner vers la liste</a>
+            </div>
+        </div>
+
+    </div>
+<br>
+{{ form_end(form) }}

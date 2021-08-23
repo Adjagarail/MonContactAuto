@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Convoyage index{% endblock %}
+
+{% block body %}
+
+
+   <div class="container">
+       <table class="table">
+           <thead>
+           <tr>
+               <th>Id</th>
+               <th>Prenom</th>
+               <th>Nom</th>
+               <th>Villed</th>
+               <th>Villea</th>
+               <th>CalendrierAt</th>
+               <th>Telephone</th>
+               <th>Marque</th>
+               <th>Modele</th>
+               <th>actions</th>
+           </tr>
+           </thead>
+           <tbody>
+           {% for convoyage in convoyages %}
+               <tr>
+                   <td>{{ convoyage.id }}</td>
+                   <td>{{ convoyage.prenom }}</td>
+                   <td>{{ convoyage.nom }}</td>
+                   <td>{{ convoyage.villed }}</td>
+                   <td>{{ convoyage.villea }}</td>
+                   <td>{{ convoyage.calendrierAt ? convoyage.calendrierAt|date('d-m-Y') : '' }}</td>
+                   <td>{{ convoyage.telephone }}</td>
+                   <td>{{ convoyage.marque }}</td>
+                   <td>{{ convoyage.modele }}</td>
+                   <td>
+                       <a href="{{ path('convoyages_show', {'id': convoyage.id}) }}">show</a>
+                       <a href="{{ path('convoyages_edit', {'id': convoyage.id}) }}">edit</a>
+                   </td>
+               </tr>
+           {% else %}
+               <tr>
+                   <td colspan="11">no records found</td>
+               </tr>
+           {% endfor %}
+           </tbody>
+       </table>
+
+       <a href="{{ path('convoyages_new') }}">Create new</a>
+   </div>
+{% endblock %}

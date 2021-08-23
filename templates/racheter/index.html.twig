@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Racheter index{% endblock %}
+
+{% block body %}
+    <h1>Racheter index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Marque</th>
+                <th>Kilometrage</th>
+                <th>Annes</th>
+                <th>Enpanne</th>
+                <th>Nom</th>
+                <th>Telephone</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for racheter in racheters %}
+            <tr>
+                <td>{{ racheter.id }}</td>
+                <td>{{ racheter.marque }}</td>
+                <td>{{ racheter.kilometrage }}</td>
+                <td>{{ racheter.annes }}</td>
+                <td>{{ racheter.enpanne }}</td>
+                <td>{{ racheter.nom }}</td>
+                <td>{{ racheter.telephone }}</td>
+                <td>
+                    <a href="{{ path('racheter_show', {'id': racheter.id}) }}">show</a>
+                    <a href="{{ path('racheter_edit', {'id': racheter.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('racheter_new') }}">Create new</a>
+{% endblock %}

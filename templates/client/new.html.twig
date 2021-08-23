@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Client{% endblock %}
+
+{% block body %}
+    <section class="page-header contactus_page">
+        <div class="container">
+            <div class="page-header_wrap">
+                <div class="page-heading">
+                    <h1>Validation commande</h1>
+                </div>
+                <ul class="coustom-breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li>Formulaire client</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Dark Overlay-->
+        <div class="dark-overlay"></div>
+    </section>
+
+    {{ include('client/_form.html.twig') }}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+    </script>
+{% endblock %}
+

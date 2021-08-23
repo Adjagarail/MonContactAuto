@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Demenagement{% endblock %}
+
+{% block body %}
+    <section class="page-header listing_page">
+        <div class="container">
+            <div class="page-header_wrap">
+                <div class="page-heading">
+                    <h1>Transport</h1>
+                </div>
+                <ul class="coustom-breadcrumb">
+                    <li><a href="{{ path('home') }}">Accueil</a></li>
+                    <li>Transport</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Dark Overlay-->
+        <div class="dark-overlay"></div>
+    </section>
+    <br>
+    <br>
+    <div class="container">
+        <div class="dealer_contact_info gray-bg" style="border: 2px solid red;">
+            <h6 style="color: red !important;"><i class="fa fa-info-circle" aria-hidden="true"></i> Condition</h6>
+            {% for condition in conditions %}
+                <a>{{ condition.contenu }}</a>
+            {% endfor %}
+        </div>
+    </div>
+    {{ include('transport/_form.html.twig') }}
+{% endblock %}

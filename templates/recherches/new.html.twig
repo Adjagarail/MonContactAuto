@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Recherche{% endblock %}
+
+{% block body %}
+
+    <section class="page-header listing_page">
+        <div class="container">
+            <div class="page-header_wrap">
+                <div class="page-heading">
+                    <h1>Aide à l'achat</h1>
+                </div>
+                <ul class="coustom-breadcrumb">
+                    <li><a href="{{ path('home') }}">Accueil</a></li>
+                    <li>Aide à l'achat</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Dark Overlay-->
+        <div class="dark-overlay"></div>
+    </section>
+    <br>
+    <br>
+    <div class="container">
+        <div class="dealer_contact_info gray-bg" style="border: 2px solid red;">
+            <h6 style="color: red !important;"><i class="fa fa-info-circle" aria-hidden="true"></i> Condition</h6>
+            {% for condition in conditions %}
+            <a href="mailto:contact@example.com">{{ condition.contenu }}</a>
+            {% endfor %}
+        </div>
+    </div>
+    {{ include('recherches/_form.html.twig') }}
+
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Racheter{% endblock %}
+
+{% block body %}
+    <h1>Create new Racheter</h1>
+
+    {{ include('racheter/_form.html.twig') }}
+
+    <a href="{{ path('racheter_index') }}">back to list</a>
+{% endblock %}

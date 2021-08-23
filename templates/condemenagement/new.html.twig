@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Condemenagement{% endblock %}
+
+{% block body %}
+    <h1>Create new Condemenagement</h1>
+
+    {{ include('condemenagement/_form.html.twig') }}
+
+    <a href="{{ path('condemenagement_index') }}">back to list</a>
+{% endblock %}

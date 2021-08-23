@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Locations{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                {% include 'home_auto/_filter.html.twig' with {search: search} only %}
+            </div>
+            <div class="col-md-9">
+                <div class="grid">
+                    {% for voiture in voitures %}
+                        {% if voiture.destiner == 'location' %}
+                            {% include 'vente/_card.html.twig' with {voiture: voiture} only %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            {{ knp_pagination_render(voitures) }}
+        </div>
+
+    </div>
+    <div id="slider"></div>
+{% endblock %}

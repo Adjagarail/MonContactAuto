@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Conexpertise{% endblock %}
+
+{% block body %}
+    <h1>Conexpertise</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ conexpertise.id }}</td>
+            </tr>
+            <tr>
+                <th>Contenu</th>
+                <td>{{ conexpertise.contenu }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('conexpertise_index') }}">back to list</a>
+
+    <a href="{{ path('conexpertise_edit', {'id': conexpertise.id}) }}">edit</a>
+
+    {{ include('conexpertise/_delete_form.html.twig') }}
+{% endblock %}

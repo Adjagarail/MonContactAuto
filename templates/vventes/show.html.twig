@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vvente{% endblock %}
+
+{% block body %}
+    <h1>Vvente</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ vvente.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ vvente.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ vvente.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Numero</th>
+                <td>{{ vvente.numero }}</td>
+            </tr>
+            <tr>
+                <th>Called</th>
+                <td>{{ vvente.called ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ vvente.ville }}</td>
+            </tr>
+            <tr>
+                <th>Demande</th>
+                <td>{{ vvente.demande }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('vventes_index') }}">back to list</a>
+
+    <a href="{{ path('vventes_edit', {'id': vvente.id}) }}">edit</a>
+
+    {{ include('vventes/_delete_form.html.twig') }}
+{% endblock %}

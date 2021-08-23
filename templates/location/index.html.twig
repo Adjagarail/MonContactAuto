@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Location{% endblock %}
+
+{% block body %}
+
+    <section class="page-header listing_page">
+        <div class="container">
+            <div class="page-header_wrap">
+                <div class="page-heading">
+                    <h1>Voiture en location</h1>
+                </div>
+                <ul class="coustom-breadcrumb">
+                    <li><a href="{{ path('home') }}">Accueil</a></li>
+                    <li>Voiture en location</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Dark Overlay-->
+        <div class="dark-overlay"></div>
+    </section>
+    <section class="listing-page">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 col-md-push-3">
+
+                        {% for voiture in voitures %}
+                            {% if voiture.destiner == 'location' %}
+                                {% include 'location/_card.html.twig' with {voiture: voiture} only %}
+                            {% endif %}
+                        {% endfor %}
+
+
+                        {{ knp_pagination_render(voitures)}}
+                    </div>
+
+                    <!--Side-Bar-->
+                    {% include 'location/_filter.html.twig' with {search: search} only %}
+                    <!--/Side-Bar-->
+                </div>
+            </div>
+        </section>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            $('#col1').hide();
+
+            $("#search_location_ville").click(function(){
+               if($("#search_location_ville").val() === 'Autre'){
+                   $('#col1').show();
+               }else {
+                   $('#col1').hide();
+               }
+            });
+        });
+    </script>
+
+{% endblock %}

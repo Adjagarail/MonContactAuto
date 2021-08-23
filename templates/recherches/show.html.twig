@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recherche{% endblock %}
+
+{% block body %}
+    <h1>Recherche</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ recherche.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ recherche.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ recherche.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ recherche.ville }}</td>
+            </tr>
+            <tr>
+                <th>Numero</th>
+                <td>{{ recherche.numero }}</td>
+            </tr>
+            <tr>
+                <th>Mail</th>
+                <td>{{ recherche.mail }}</td>
+            </tr>
+            <tr>
+                <th>Marque</th>
+                <td>{{ recherche.marque }}</td>
+            </tr>
+            <tr>
+                <th>Modele</th>
+                <td>{{ recherche.modele }}</td>
+            </tr>
+            <tr>
+                <th>Years</th>
+                <td>{{ recherche.years }}</td>
+            </tr>
+            <tr>
+                <th>Km</th>
+                <td>{{ recherche.km }}</td>
+            </tr>
+            <tr>
+                <th>Couleur</th>
+                <td>{{ recherche.couleur }}</td>
+            </tr>
+            <tr>
+                <th>Option1</th>
+                <td>{{ recherche.option1 }}</td>
+            </tr>
+            <tr>
+                <th>Budget</th>
+                <td>{{ recherche.budget }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+    <a href="{{ path('recherches_edit', {'id': recherche.id}) }}">edit</a>
+
+    {{ include('recherches/_delete_form.html.twig') }}
+{% endblock %}

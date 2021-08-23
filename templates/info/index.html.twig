@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Info index{% endblock %}
+
+{% block body %}
+    <br>
+       <div class="container-fluid">
+           <a href="{{ path('info_new') }}" class="btn btn-success">Ajoutez une Information</a>
+           <br>
+           <br>
+           <table class="table">
+               <thead>
+               <tr>
+                   <th>Id</th>
+                   <th>Image</th>
+                   <th>Titre</th>
+                   <th>Message</th>
+                   <th>actions</th>
+               </tr>
+               </thead>
+               <tbody>
+               {% for info in infos %}
+                   <tr>
+                       <td>{{ info.id }}</td>
+                       <td>{{ info.image }}</td>
+                       <td>{{ info.titre }}</td>
+                       <td>{{ info.message }}</td>
+                       <td>
+                           <a href="{{ path('info_show', {'id': info.id}) }}">show</a>
+                           <a href="{{ path('info_edit', {'id': info.id}) }}">edit</a>
+                       </td>
+                   </tr>
+               {% else %}
+                   <tr>
+                       <td colspan="5">no records found</td>
+                   </tr>
+               {% endfor %}
+               </tbody>
+           </table>
+       </div>
+{% endblock %}

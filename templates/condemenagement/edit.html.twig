@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Condemenagement{% endblock %}
+
+{% block body %}
+    <h1>Edit Condemenagement</h1>
+
+    {{ include('condemenagement/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('condemenagement_index') }}">back to list</a>
+
+    {{ include('condemenagement/_delete_form.html.twig') }}
+{% endblock %}

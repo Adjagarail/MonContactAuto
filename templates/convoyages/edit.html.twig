@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Convoyage{% endblock %}
+
+{% block body %}
+    <h1>Edit Convoyage</h1>
+
+    {{ include('convoyages/_form.html.twig', {'button_label': 'Update'}) }}
+
+
+    {{ include('convoyages/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Conexpertise{% endblock %}
+
+{% block body %}
+    <h1>Create new Conexpertise</h1>
+
+    {{ include('conexpertise/_form.html.twig') }}
+
+    <a href="{{ path('conexpertise_index') }}">back to list</a>
+{% endblock %}

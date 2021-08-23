@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Racheter{% endblock %}
+
+{% block body %}
+    <h1>Racheter</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ racheter.id }}</td>
+            </tr>
+            <tr>
+                <th>Marque</th>
+                <td>{{ racheter.marque }}</td>
+            </tr>
+            <tr>
+                <th>Kilometrage</th>
+                <td>{{ racheter.kilometrage }}</td>
+            </tr>
+            <tr>
+                <th>Annes</th>
+                <td>{{ racheter.annes }}</td>
+            </tr>
+            <tr>
+                <th>Enpanne</th>
+                <td>{{ racheter.enpanne }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ racheter.nom }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ racheter.telephone }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('racheter_index') }}">back to list</a>
+
+    <a href="{{ path('racheter_edit', {'id': racheter.id}) }}">edit</a>
+
+    {{ include('racheter/_delete_form.html.twig') }}
+{% endblock %}

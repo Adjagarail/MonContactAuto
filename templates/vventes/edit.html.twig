@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Vvente{% endblock %}
+
+{% block body %}
+    <h1>Edit Vvente</h1>
+
+    {{ include('vventes/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('vventes_index') }}">back to list</a>
+
+    {{ include('vventes/_delete_form.html.twig') }}
+{% endblock %}

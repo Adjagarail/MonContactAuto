@@ -1,0 +1,47 @@
+<div class="container">
+    <h3>Acheter ou louer une voiture <span>Recherche facile à partir d'ici</span></h3>
+    <div class="row">
+        {{ form_start(formSearch) }}
+        <div class="form-group col-md-3 col-sm-6 black_input">
+            <div class="select">
+                {{ form_row(formSearch.destiner) }}
+            </div>
+        </div>
+        <div class="form-group col-md-3 col-sm-6 black_input">
+            <div class="select">
+                {{ form_row(formSearch.typevehicule) }}
+            </div>
+        </div>
+        <div class="form-group col-md-3 col-sm-6 black_input">
+            <div class="select">
+                {{ form_row(formSearch.years) }}
+            </div>
+        </div>
+        <div class="form-group col-md-3 col-sm-6 black_input">
+            <div class="select">
+                {{ form_row(formSearch.marques) }}
+            </div>
+        </div>
+        <div class="form-group col-md-3 col-sm-6 black_input">
+            <div class="select">
+                {{ form_row(formSearch.carburant) }}
+            </div>
+        </div>
+        <div class="form-group col-md-3 col-sm-6 black_input">
+            <div class="select">
+                {{ form_row(formSearch.transmission) }}
+            </div>
+        </div>
+
+        <div id="price-slider" data-min="20" data-max="50" style="margin-bottom: 3rem;"></div>
+
+        <div class="form-group col-md-3 col-sm-6">
+            <label class="form-label"></label>
+            <label class="form-label"></label>
+            <button type="submit" class="btn btn-block"><i class="fa fa-search" aria-hidden="true"></i> Search Car </button>
+
+        </div>
+        {{ form_end(formSearch) }}
+
+    </div>
+</div>

@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Racheter1Controller!{% endblock %}
+
+{% block body %}
+
+    <section class="page-header listing_page">
+        <div class="container">
+            <div class="page-header_wrap">
+                <div class="page-heading">
+                    <h1>On rachète</h1>
+                </div>
+                <ul class="coustom-breadcrumb">
+                    <li><a href="{{ path('home') }}">Accueil</a></li>
+                    <li>On rachète</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Dark Overlay-->
+        <div class="dark-overlay"></div>
+    </section>
+
+    <br>
+
+    <div class="container">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button class="btn ">{{ button_label|default('Save') }}</button>
+        {{ form_end(form) }}
+        <br>
+    </div>
+
+{% endblock %}

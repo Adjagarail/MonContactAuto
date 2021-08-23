@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ConRecherche{% endblock %}
+
+{% block body %}
+    <h1>ConRecherche</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ con_recherche.id }}</td>
+            </tr>
+            <tr>
+                <th>Contenu</th>
+                <td>{{ con_recherche.contenu }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('con_recherche_index') }}">back to list</a>
+
+    <a href="{{ path('con_recherche_edit', {'id': con_recherche.id}) }}">edit</a>
+
+    {{ include('con_recherche/_delete_form.html.twig') }}
+{% endblock %}

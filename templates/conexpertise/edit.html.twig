@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Conexpertise{% endblock %}
+
+{% block body %}
+    <h1>Edit Conexpertise</h1>
+
+    {{ include('conexpertise/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('conexpertise_index') }}">back to list</a>
+
+    {{ include('conexpertise/_delete_form.html.twig') }}
+{% endblock %}

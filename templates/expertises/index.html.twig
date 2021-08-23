@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Expertise index{% endblock %}
+
+{% block body %}
+     <div class="container-fluid">
+
+         <br>
+         <h1>Expertise Voiture</h1>
+         <br>
+         <br>
+         <table class="table">
+             <thead>
+             <tr>
+                 <th>Id</th>
+                 <th>Prenom</th>
+                 <th>Nom</th>
+                 <th>Prénom et nom du vendeur</th>
+                 <th>Telephonev</th>
+                 <th>Telephonec</th>
+                 <th>Lien</th>
+                 <th>Adressev</th>
+                 <th>actions</th>
+             </tr>
+             </thead>
+             <tbody>
+             {% for expertise in expertises %}
+                 <tr>
+                     <td>{{ expertise.id }}</td>
+                     <td>{{ expertise.prenom }}</td>
+                     <td>{{ expertise.nom }}</td>
+                     <td>{{ expertise.prenomnomvendeur }}</td>
+                     <td>{{ expertise.telephonev }}</td>
+                     <td>{{ expertise.telephonec }}</td>
+                     <td><a href="{{ expertise.lien }}" target="_blank">Lien voiture</a></td>
+                     <td>{{ expertise.adressev }}</td>
+                     <td>
+                         <a href="{{ path('expertises_show', {'id': expertise.id}) }}"><i class="fa fa-eye" aria-hidden="true"></i>Voir détails&nbsp;&nbsp;</a>
+                         <a href="{{ path('expertises_edit', {'id': expertise.id}) }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Modifier&nbsp;&nbsp;</a>
+                     </td>
+                 </tr>
+             {% else %}
+                 <tr>
+                     <td colspan="9">no records found</td>
+                 </tr>
+             {% endfor %}
+             </tbody>
+         </table>
+         <br>
+     </div>
+{% endblock %}

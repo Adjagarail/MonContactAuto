@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Condeposer{% endblock %}
+
+{% block body %}
+    <h1>Edit Condeposer</h1>
+
+    {{ include('condeposer/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('condeposer_index') }}">back to list</a>
+
+    {{ include('condeposer/_delete_form.html.twig') }}
+{% endblock %}

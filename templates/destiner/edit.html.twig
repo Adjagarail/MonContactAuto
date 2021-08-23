@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Destiner{% endblock %}
+
+{% block body %}
+    <h1>Edit Destiner</h1>
+
+    {{ include('destiner/_form.html.twig', {'button_label': 'Update'}) }}
+
+
+    {{ include('destiner/_delete_form.html.twig') }}
+{% endblock %}

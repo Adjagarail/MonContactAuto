@@ -1,0 +1,36 @@
+<div class="product-listing-m gray-bg">
+
+	<div class="product-listing-img">
+		{% for image in voiture.images %}
+			{% if voiture.images|first.name == image.name %}
+				<img src="{{ asset('/uploads/'~image.name) }}" class="img-responsive" alt="image" />
+			{% endif %}
+		{% endfor %}
+
+		<div class="label_icon" onclick="window.location.href='{{ path('cart_add', {'id': voiture.id}) }}'">Réserver &nbsp;<i class="fa fa-shopping-cart" aria-hidden="true"></i> </div>
+		<div class="compare_item">
+			<div>
+				<label for="compare25" style="color: whitesmoke !important;"><i class="fa fa-car" aria-hidden="true"></i> &nbsp; &nbsp;{{ voiture.typevehicule.name }}</label>
+			</div>
+		</div>
+	</div>
+	<div class="product-listing-content">
+		<h5><a href="#">{{ voiture.marques.name }}</a></h5>
+		<p class="list-price"> <i class="fa fa-eur" aria-hidden="true"></i>{{ voiture.prix}}</p>
+		<ul>
+			<li><i class="fa fa-road" aria-hidden="true"></i>{{ voiture.kilometrages}} km</li>
+			<li><i class="fa fa-user" aria-hidden="true"></i>{{ voiture.place}} places</li>
+			<li><i class="fa fa-calendar" aria-hidden="true"></i>{{ voiture.years}} model</li>
+			<li><i class="fa fa-car" aria-hidden="true"></i>{{ voiture.carburant }}</li>
+			<li><i class="fa fa-power-off" aria-hidden="true"></i>{{ voiture.transmission }}</li>
+			<li><i class="fa fa-cogs" aria-hidden="true"></i>
+				{% for option in voiture.options %}
+					{{ option.name }}
+				{% endfor %}
+			</li>
+
+		</ul>
+		<a href="{{ path('voiture_show2', {'id': voiture.id}) }}" class="btn">Voir détails <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></a>
+		<div class="car-location"><span><i class="fa fa-map-marker" aria-hidden="true"></i> {{ voiture.villeL }} , France</span></div>
+	</div>
+</div>

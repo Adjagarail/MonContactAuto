@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recherche index{% endblock %}
+
+{% block body %}
+    <h1>Recherche index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Ville</th>
+                <th>Numero</th>
+                <th>Mail</th>
+                <th>Marque</th>
+                <th>Modele</th>
+                <th>Years</th>
+                <th>Km</th>
+                <th>Couleur</th>
+                <th>Option1</th>
+                <th>Budget</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for recherche in recherches %}
+            <tr>
+                <td>{{ recherche.id }}</td>
+                <td>{{ recherche.nom }}</td>
+                <td>{{ recherche.prenom }}</td>
+                <td>{{ recherche.ville }}</td>
+                <td>{{ recherche.numero }}</td>
+                <td>{{ recherche.mail }}</td>
+                <td>{{ recherche.marque }}</td>
+                <td>{{ recherche.modele }}</td>
+                <td>{{ recherche.years }}</td>
+                <td>{{ recherche.km }}</td>
+                <td>{{ recherche.couleur }}</td>
+                <td>{{ recherche.option1 }}</td>
+                <td>{{ recherche.budget }}</td>
+                <td>
+                    <a href="{{ path('recherches_show', {'id': recherche.id}) }}">show</a>
+                    <a href="{{ path('recherches_edit', {'id': recherche.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="14">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('recherches_new') }}">Create new</a>
+{% endblock %}
