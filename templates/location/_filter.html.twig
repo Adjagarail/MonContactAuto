@@ -6,6 +6,9 @@
         <div class="sidebar_filter">
             {{ form_start(search, {attr: {class: 'filter'}}) }}
             <div class="form-group ">
+                {{ form_row(search.typevehicule) }}
+            </div>
+            <div class="form-group ">
                 {{ form_row(search.dispoAt) }}
             </div>
             <div class="form-group">

@@ -166,6 +166,11 @@ class VoitureRepository extends ServiceEntityRepository
                     ->setParameter('disposAt', $locationData->disposAt);
 
         }
+        if(!empty($locationData->typevehicule)){
+            $query = $query
+                ->andWhere('s.id IN (:typevehicule)')
+                ->setParameter('typevehicule',$locationData->typevehicule);
+        }
         if(!empty($locationData->ville)){
             $query = $query
                 ->andWhere('p.villeL LIKE :ville')

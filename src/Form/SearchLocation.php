@@ -26,6 +26,13 @@ class SearchLocation extends AbstractType
             'Autre' => 'Autre',
         ];
         $builder
+            ->add('typevehicule', EntityType::class, [
+                'class' => Typevehicule::class,
+                'placeholder' => 'Type de véhicule',
+                'mapped' => true,
+                'expanded' => false,
+                'label' => false
+            ])
             ->add('dispoAt', DateType::class,[
                 'data'   => new \DateTime(),
                 'widget' => 'single_text',

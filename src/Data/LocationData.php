@@ -4,6 +4,8 @@
 namespace App\Data;
 
 
+use App\Entity\Typevehicule;
+
 class LocationData
 {
     /**
@@ -15,6 +17,10 @@ class LocationData
      * @var int
      */
     public $page = 1;
+    /**
+     * @var Typevehicule[]
+     */
+    public $typevehicule;
 
     /**
      * @var null/datetime
