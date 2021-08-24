@@ -63,7 +63,8 @@ class DemenagementType extends AbstractType
                 'expanded' => true,
                 'required' => true,
                 'data' => 'non',
-                'label' => 'Date et heure souhaitées:'])
+                'label' => 'Date et heure souhaitées:'
+            ])
 
             ->add('descriptionbagage',TextareaType::class, [
                 'label' => 'Description démanagement:'
