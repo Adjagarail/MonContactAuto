@@ -53,7 +53,7 @@ class DemenagementType extends AbstractType
                 'required' => false
             ])
             ->add('deposerAt',DateTimeType::class,[
-                'label' => false
+                'label' => 'Date et heure de départ:'
             ])
             ->add('nombrepersonne', TextType::class, [
                 'label' => 'Nombre de personne:'
