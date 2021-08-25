@@ -53,17 +53,14 @@ class DemenagementType extends AbstractType
                 'required' => false
             ])
             ->add('deposerAt',DateTimeType::class,[
-                'label' => 'Date et heure de départ:'
-            ])
-            ->add('nombrepersonne', TextType::class, [
-                'label' => 'Nombre de personne:'
+                'label' => 'Date et heure souhaitées:'
             ])
             ->add('dateflexible',ChoiceType::class, [
                 'choices' => $choice,
                 'expanded' => true,
                 'required' => true,
                 'data' => 'non',
-                'label' => 'Date et heure souhaitées:'
+                'label' => 'Date flexible:'
             ])
 
             ->add('descriptionbagage',TextareaType::class, [
