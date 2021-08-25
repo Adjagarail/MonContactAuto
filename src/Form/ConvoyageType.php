@@ -42,11 +42,13 @@ class ConvoyageType extends AbstractType
                 'data' => 'non',
                 'label' => 'Date flexible:'
             ])
-            ->add('telephone',NumberType::class,[
+            ->add('telephone',TextType::class,[
                 'Numéro de téléphone:'
             ])
-            ->add('marque')
-            ->add('modele')
+            /*->add('marque',TextType::class, [
+                'label' => 'Marques de la véhicule:'
+            ])
+            ->add('modele')*/
         ;
     }
 
