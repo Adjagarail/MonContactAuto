@@ -15,25 +15,19 @@ class ExpertiseType extends AbstractType
     {
         $builder
             ->add('prenom', TextType::class, [
-                'label' => 'Prénom'
+                'label' => 'Prénom:'
             ])
             ->add('nom',TextType::class, [
-                'label' => 'Nom'
+                'label' => 'Nom:'
             ])
             ->add('telephonec',TextType::class, [
-                'label' => 'Votre téléphone'
-            ])
-            ->add('prenomnomvendeur',TextType::class, [
-                'label' => 'Prénom et nom vendeur'
-            ])
-            ->add('telephonev',TextType::class, [
-                'label' => 'Téléĥone vendeur'
+                'label' => 'Votre numéro de téléphone:'
             ])
             ->add('lien',TextType::class, [
-                'label' => 'Lien annonce'
+                'label' => 'Lien annonce:'
             ])
             ->add('adressev',TextType::class, [
-                'label' => 'Adresse vendeur'
+                'label' => 'Votre adresse:'
             ])
             ->add('infos',TextareaType::class, [
                 'label' => 'Info supplémentaire'
