@@ -43,7 +43,7 @@ class ConvoyageType extends AbstractType
                 'label' => 'Date flexible:'
             ])
             ->add('telephone',TextType::class,[
-                'Numéro de téléphone:'
+                'label' => 'Numéro de téléphone:'
             ])
             /*->add('marque',TextType::class, [
                 'label' => 'Marques de la véhicule:'
