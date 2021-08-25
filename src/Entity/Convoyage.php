@@ -57,6 +57,11 @@ class Convoyage
      */
     private $modele;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $flexible;
+
 
     public function getId(): ?int
     {
@@ -155,6 +160,18 @@ class Convoyage
     public function setModele(string $modele): self
     {
         $this->modele = $modele;
+
+        return $this;
+    }
+
+    public function getFlexible(): ?string
+    {
+        return $this->flexible;
+    }
+
+    public function setFlexible(string $flexible): self
+    {
+        $this->flexible = $flexible;
 
         return $this;
     }

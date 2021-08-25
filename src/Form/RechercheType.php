@@ -38,26 +38,28 @@ class RechercheType extends AbstractType
                 'label' => 'Ville:'
             ])
             ->add('numero',NumberType::class,[
-                'label' => 'Numéro Téléphone:'
+                'label' => 'Numéro de Téléphone:'
             ])
             ->add('mail', EmailType::class, [
                 'label' => 'Email:'
             ])
             ->add('marque',TextType::class,[
-                'label' => 'Marque de la voiture:'
+                'label' => 'Marques désirées:'
             ])
             ->add('modele', TextType::class,[
-                'label' => 'Modèle de la voiture:'
+                'label' => 'Modèles désirées:'
             ])
             ->add('years', NumberType::class,[
                 'label' => 'Année de la voiture:'
             ])
             ->add('km', NumberType::class,[
-                'label' => 'Kilomètrage:'
+                'label' => 'Kilomètrage maximum:'
             ])
-            ->add('couleur')
+            ->add('couleur', TextType::class,[
+                'label' => 'Couleurs désirées'
+            ])
             ->add('options', EntityType::class, [
-                'label' => 'Options de la voiture:',
+                'label' => 'Options Exigées:',
                 'required' => false,
                 'class' => Option::class,
                 'expanded' => true,
