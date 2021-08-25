@@ -6,6 +6,7 @@ use App\Entity\Convoyage;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -41,7 +42,9 @@ class ConvoyageType extends AbstractType
                 'data' => 'non',
                 'label' => 'Date flexible:'
             ])
-            ->add('telephone')
+            ->add('telephone',NumberType::class,[
+                'Numéro de téléphone:'
+            ])
             ->add('marque')
             ->add('modele')
         ;
