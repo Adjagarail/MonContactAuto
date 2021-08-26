@@ -57,6 +57,11 @@ class Expertise
      */
     private $infos;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $modele;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -154,6 +159,18 @@ class Expertise
     public function setInfos(string $infos): self
     {
         $this->infos = $infos;
+
+        return $this;
+    }
+
+    public function getModele(): ?string
+    {
+        return $this->modele;
+    }
+
+    public function setModele(string $modele): self
+    {
+        $this->modele = $modele;
 
         return $this;
     }

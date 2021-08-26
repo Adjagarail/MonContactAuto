@@ -32,6 +32,10 @@ class ExpertiseType extends AbstractType
             ->add('telephonev',TextType::class, [
                 'label' => 'Télépĥone vendeur:'
             ])
+            ->add('modele',TextType::class, [
+                'label' => 'Marque et modèle véhicule:'
+            ])
+
             ->add('lien',TextType::class, [
                 'label' => 'Lien annonce:'
             ])
