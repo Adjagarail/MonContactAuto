@@ -77,7 +77,11 @@ class VoitureDataType extends AbstractType
                'choices' => $choices,
                'expanded' => false,
                'placeholder' => 'Choisissez vente ou location',
-               'label' => false
+               'label' => false,
+               'multiple' => false,
+               'attr' => [
+                   'class' => 'select2'
+               ]
            ])
            ->add('typevehicule', EntityType::class, [
                'class' => Typevehicule::class,

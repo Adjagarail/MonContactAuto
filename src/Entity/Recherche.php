@@ -43,16 +43,7 @@ class Recherche
      * @ORM\Column(type="string", length=255)
      */
     private $mail;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $marque;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $modele;
+    
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -89,9 +80,26 @@ class Recherche
      */
     private $recherches;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Recherche::class, inversedBy="modele")
+     */
+    private $recherche;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Recherche::class, mappedBy="recherche")
+     */
+    private $modele;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Marque::class, mappedBy="recherche")
+     */
+    private $marques;
+
     public function __construct()
     {
         $this->recherches = new ArrayCollection();
+        $this->modele = new ArrayCollection();
+        $this->marques = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -159,29 +167,9 @@ class Recherche
         return $this;
     }
 
-    public function getMarque(): ?string
-    {
-        return $this->marque;
-    }
 
-    public function setMarque(string $marque): self
-    {
-        $this->marque = $marque;
 
-        return $this;
-    }
-
-    public function getModele(): ?string
-    {
-        return $this->modele;
-    }
-
-    public function setModele(string $modele): self
-    {
-        $this->modele = $modele;
-
-        return $this;
-    }
+    
 
     public function getYears(): ?string
     {
@@ -279,6 +267,78 @@ class Recherche
             // set the owning side to null (unless already changed)
             if ($recherch->getOptions() === $this) {
                 $recherch->setOptions(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getRecherche(): ?self
+    {
+        return $this->recherche;
+    }
+
+    public function setRecherche(?self $recherche): self
+    {
+        $this->recherche = $recherche;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|self[]
+     */
+    public function getModele(): Collection
+    {
+        return $this->modele;
+    }
+
+    public function addModele(self $modele): self
+    {
+        if (!$this->modele->contains($modele)) {
+            $this->modele[] = $modele;
+            $modele->setRecherche($this);
+        }
+
+        return $this;
+    }
+
+    public function removeModele(self $modele): self
+    {
+        if ($this->modele->removeElement($modele)) {
+            // set the owning side to null (unless already changed)
+            if ($modele->getRecherche() === $this) {
+                $modele->setRecherche(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Marque[]
+     */
+    public function getMarques(): Collection
+    {
+        return $this->marques;
+    }
+
+    public function addMarque(Marque $marque): self
+    {
+        if (!$this->marques->contains($marque)) {
+            $this->marques[] = $marque;
+            $marque->setRecherche($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMarque(Marque $marque): self
+    {
+        if ($this->marques->removeElement($marque)) {
+            // set the owning side to null (unless already changed)
+            if ($marque->getRecherche() === $this) {
+                $marque->setRecherche(null);
             }
         }
 

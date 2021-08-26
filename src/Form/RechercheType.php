@@ -2,6 +2,8 @@
 
 namespace App\Form;
 
+use App\Entity\Marque;
+use App\Entity\Modele;
 use App\Entity\Option;
 use App\Entity\Recherche;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -43,11 +45,20 @@ class RechercheType extends AbstractType
             ->add('mail', EmailType::class, [
                 'label' => 'Email:'
             ])
-            ->add('marque',TextType::class,[
-                'label' => 'Marques désirées:'
+            ->add('marques', EntityType::class, [
+                'label' => 'Marques désirées:',
+                'required' => false,
+                'class' => Marque::class,
+                'expanded' => false,
+                'multiple' => true,
             ])
-            ->add('modele', TextType::class,[
-                'label' => 'Modèles désirées:'
+
+            ->add('modele', EntityType::class, [
+                'label' => 'Modèles désirées:',
+                'required' => false,
+                'class' => Modele::class,
+                'expanded' => false,
+                'multiple' => true,
             ])
             ->add('years', NumberType::class,[
                 'label' => 'Année de la voiture:'
@@ -62,7 +73,7 @@ class RechercheType extends AbstractType
                 'label' => 'Options Exigées:',
                 'required' => false,
                 'class' => Option::class,
-                'expanded' => true,
+                'expanded' => false,
                 'multiple' => true
             ])
             ->add('budget',NumberType::class,[

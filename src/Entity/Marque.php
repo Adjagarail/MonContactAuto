@@ -29,6 +29,11 @@ class Marque
      */
     private $vventes;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Recherche::class, inversedBy="marques")
+     */
+    private $recherche;
+
 
 
     public function __construct()
@@ -85,6 +90,18 @@ class Marque
     public function __toString()
     {
         return $this->getNom();
+    }
+
+    public function getRecherche(): ?Recherche
+    {
+        return $this->recherche;
+    }
+
+    public function setRecherche(?Recherche $recherche): self
+    {
+        $this->recherche = $recherche;
+
+        return $this;
     }
 
 }

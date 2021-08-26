@@ -17,7 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class RecherchesController extends AbstractController
 {
     /**
-     * @Route("/", name="recherches_index", methods={"GET"})
+     * @Route("/administration/", name="recherches_index", methods={"GET"})
      */
     public function index(RechercheRepository $rechercheRepository): Response
     {
@@ -52,7 +52,7 @@ class RecherchesController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="recherches_show", methods={"GET"})
+     * @Route("/administration/{id}", name="recherches_show", methods={"GET"})
      */
     public function show(Recherche $recherche): Response
     {
@@ -62,7 +62,7 @@ class RecherchesController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="recherches_edit", methods={"GET","POST"})
+     * @Route("/administration/{id}/edit", name="recherches_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Recherche $recherche): Response
     {
@@ -82,7 +82,7 @@ class RecherchesController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="recherches_delete", methods={"POST"})
+     * @Route("/administration/{id}", name="recherches_delete", methods={"POST"})
      */
     public function delete(Request $request, Recherche $recherche): Response
     {

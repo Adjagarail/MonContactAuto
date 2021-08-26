@@ -17,7 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ConvoyagesController extends AbstractController
 {
     /**
-     * @Route("/", name="convoyages_index", methods={"GET"})
+     * @Route("/administration", name="convoyages_index", methods={"GET"})
      */
     public function index(ConvoyageRepository $convoyageRepository): Response
     {
@@ -53,7 +53,7 @@ class ConvoyagesController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="convoyages_show", methods={"GET"})
+     * @Route("/administration/{id}", name="convoyages_show", methods={"GET"})
      */
     public function show(Convoyage $convoyage): Response
     {
@@ -63,7 +63,7 @@ class ConvoyagesController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="convoyages_edit", methods={"GET","POST"})
+     * @Route("/administration/{id}/edit", name="convoyages_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Convoyage $convoyage): Response
     {
@@ -83,7 +83,7 @@ class ConvoyagesController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="convoyages_delete", methods={"POST"})
+     * @Route("/administration/{id}", name="convoyages_delete", methods={"POST"})
      */
     public function delete(Request $request, Convoyage $convoyage): Response
     {

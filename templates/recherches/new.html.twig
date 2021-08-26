@@ -33,5 +33,38 @@
     <br>
     <br>
 
+    <script src="{{asset('assets/js/jquery.min.js')}}"></script>
+    <script>
+
+        $(document).ready(function () {
+            $('#recherche_modele').select2({
+                dropdownAutoWidth: true,
+                dropdownCssClass: 'form-control'
+            });
+            $('#recherche_marques').select2({
+                dropdownAutoWidth: true,
+                dropdownCssClass: 'form-control'
+            });
+            $('#recherche_options').select2({
+                dropdownAutoWidth: true,
+                dropdownCssClass: 'form-control'
+            });
+
+        })
+    </script>
+    <style>
+        #recherche_modele {
+            background: #eeeeee none repeat scroll 0 0 !important;
+            border: 0 none;
+            border-radius: 3px;
+            box-shadow: none;
+            color: #888888;
+            font-size: 15px;
+            height: 46px;
+            line-height: 30px;
+            padding: 0 15px;
+        }
+    </style>
+
 
 {% endblock %}

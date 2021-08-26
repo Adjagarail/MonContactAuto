@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/marques")
+ * @Route("/administration/marques")
  */
 class MarquesController extends AbstractController
 {
