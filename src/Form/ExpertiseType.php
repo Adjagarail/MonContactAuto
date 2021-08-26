@@ -24,13 +24,13 @@ class ExpertiseType extends AbstractType
                 'label' => 'Votre adresse:'
             ])
             ->add('telephonec',TextType::class, [
-                'label' => 'Votre téléphone'
+                'label' => 'Votre téléphone:'
             ])
             ->add('prenomnomvendeur',TextType::class, [
-                'label' => 'Prénom et nom vendeur'
+                'label' => 'Nom et Prénom vendeur:'
             ])
             ->add('telephonev',TextType::class, [
-                'label' => 'Téléĥone vendeur'
+                'label' => 'Télépĥone vendeur:'
             ])
             ->add('lien',TextType::class, [
                 'label' => 'Lien annonce:'
