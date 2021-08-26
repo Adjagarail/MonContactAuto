@@ -61,7 +61,7 @@ class RechercheType extends AbstractType
                 'multiple' => true,
             ])
             ->add('years', NumberType::class,[
-                'label' => 'Année de la voiture:'
+                'label' => 'Année minimum:'
             ])
             ->add('km', NumberType::class,[
                 'label' => 'Kilomètrage maximum:'
