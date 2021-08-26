@@ -33,34 +33,21 @@ class SearchForm extends AbstractType
                 'expanded' => false,
                 'label' => false
             ])
-            ->add('min', NumberType::class, [
-                'label' => false,
-                'required' => false,
-                'attr' => [
-                    'placeholder' => 'Km minimale'
-                ]
-            ])
             ->add('max', NumberType::class, [
                 'label' => false,
                 'required' => false,
                 'attr' => [
-                    'placeholder' => 'Km maximale'
+                    'placeholder' => 'Km maximum'
                 ]
             ])
             ->add('minYears', NumberType::class, [
                 'label' => false,
                 'required' => false,
                 'attr' => [
-                    'placeholder' => 'Année minimale'
+                    'placeholder' => 'Année minimum'
                 ]
             ])
-            ->add('maxYears', NumberType::class, [
-                'label' => false,
-                'required' => false,
-                'attr' => [
-                    'placeholder' => 'Année maximale'
-                ]
-            ])
+
 
 
         ;
