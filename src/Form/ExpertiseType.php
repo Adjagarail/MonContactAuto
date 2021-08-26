@@ -14,21 +14,28 @@ class ExpertiseType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('prenom', TextType::class, [
-                'label' => 'Prénom:'
-            ])
             ->add('nom',TextType::class, [
                 'label' => 'Nom:'
             ])
-            ->add('telephonec',TextType::class, [
-                'label' => 'Votre numéro de téléphone:'
-            ])
-            ->add('lien',TextType::class, [
-                'label' => 'Lien annonce:'
+            ->add('prenom', TextType::class, [
+                'label' => 'Prénom:'
             ])
             ->add('adressev',TextType::class, [
                 'label' => 'Votre adresse:'
             ])
+            ->add('telephonec',TextType::class, [
+                'label' => 'Votre téléphone'
+            ])
+            ->add('prenomnomvendeur',TextType::class, [
+                'label' => 'Prénom et nom vendeur'
+            ])
+            ->add('telephonev',TextType::class, [
+                'label' => 'Téléĥone vendeur'
+            ])
+            ->add('lien',TextType::class, [
+                'label' => 'Lien annonce:'
+            ])
+
             ->add('infos',TextareaType::class, [
                 'label' => 'Info supplémentaire'
             ])
