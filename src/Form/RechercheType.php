@@ -63,9 +63,7 @@ class RechercheType extends AbstractType
             ->add('years', NumberType::class,[
                 'label' => 'Année minimum:'
             ])
-            ->add('km', NumberType::class,[
-                'label' => 'Kilomètrage maximum:'
-            ])
+
             ->add('couleur', TextType::class,[
                 'label' => 'Couleurs désirées'
             ])
