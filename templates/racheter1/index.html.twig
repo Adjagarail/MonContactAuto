@@ -23,8 +23,21 @@
     <br>
 
     <div class="container">
+        <div class="alert alert-success" role="alert">
+            Infos Véhicule:
+        </div>
         {{ form_start(form) }}
-        {{ form_widget(form) }}
+        {{ form_row(form.marque) }}
+        {{ form_row(form.kilometrage) }}
+        {{ form_row(form.annes) }}
+        {{ form_row(form.images) }}
+        {{ form_row(form.enpanne) }}
+
+        <div class="alert alert-success" role="alert">
+                Vos informations:
+        </div>
+        {{ form_row(form.nom) }}
+        {{ form_row(form.telephone) }}
         <button class="btn ">Je vend !</button>
         {{ form_end(form) }}
         <br>

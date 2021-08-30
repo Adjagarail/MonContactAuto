@@ -24,17 +24,17 @@ class RacheterType extends AbstractType
         ];
         $builder
             ->add('marque', TextType::class, [
-                'label' => 'Marque de votre voiture:'
+                'label' => 'Marque:'
             ])
             ->add('kilometrage', NumberType::class, [
                 'label' => 'Kilométrage:'
             ])
             ->add('annes', NumberType::class, [
 
-                'label' => 'Année de la voiture:'
+                'label' => 'Année:'
             ])
             ->add('images', FileType::class,[
-                'label' => 'Images de la voiture',
+                'label' => 'Photos',
                 'multiple' => true,
                 'mapped' => false,
                 'required' => false
@@ -45,13 +45,13 @@ class RacheterType extends AbstractType
                 'expanded' => true,
                 'data' => 'Oui',
                 'required' => true,
-                'label' => 'Voiture en panne:'
+                'label' => 'En panne:'
             ])
             ->add('nom', TextType::class, [
-                'label' => 'Votre Prénom et Nom:'
+                'label' => 'Prénom et Nom:'
             ])
             ->add('telephone', NumberType::class, [
-                'label' => ' Votre numéro de téléphone:'
+                'label' => ' Numéro de téléphone:'
             ])
         ;
     }

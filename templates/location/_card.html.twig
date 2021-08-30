@@ -3,7 +3,7 @@
 	<div class="product-listing-img">
 		{% for image in voiture.images %}
 			{% if voiture.images|first.name == image.name %}
-				<img src="{{ asset('/uploads/'~image.name) }}" class="img-responsive" alt="image" />
+				<img src="{{ asset('/uploads/'~image.name) }}" class="img-responsive" alt="image" style="height: 250px !important;"/>
 			{% endif %}
 		{% endfor %}
 
