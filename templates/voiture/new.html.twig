@@ -13,10 +13,26 @@
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style src="{{asset('assets/css/bootstrap-datepicker3.css')}}"></style>
     <script>
         $(document).ready(function(){
 
+
+
+            var date_input=$('#voiture_dispoAt'); //our date input has the name "myrosterdate"
+            var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+            var options={
+                multidate:true,
+                format: 'yyyy-mm-dd',
+                container: container,
+                todayHighlight: true,
+                autoclose: false,
+            };
+            date_input.datepicker(options);
+
             $("#voiture_destiner").click(function(){
+                alert('test ok')
+
                if($("#voiture_destiner").val() === 'location'){
                    $("#tarif1").show();
                    $("#tarif2").show();

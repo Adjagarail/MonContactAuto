@@ -24,6 +24,7 @@
 
     <link href="{{asset('assets/css/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/select2.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/css/bootstrap-datepicker3.css')}}" rel="stylesheet" />
 
 
     <!-- Custom Colors -->
@@ -47,6 +48,8 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+    <script src="{{asset('assets/js/bootstrap-datepicker.min.js')}}"></script>
     <![endif]-->
         {{ encore_entry_link_tags('app') }}
     {{ encore_entry_script_tags('app') | replace({'src=': 'defer src='}) | raw }}
