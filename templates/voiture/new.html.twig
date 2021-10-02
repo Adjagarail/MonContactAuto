@@ -10,28 +10,19 @@
         {{ include('voiture/_form.html.twig') }}
     </div>
 
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <style src="{{asset('assets/css/bootstrap-datepicker3.css')}}"></style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
+            $('#voiture_dispoAt').datepicker({
+                format: 'dd/mm/yyyy',
+                startDate: '-3d',
+                multidate: true,
+                language: 'fr'
+            });
 
-
-
-            var date_input=$('#voiture_dispoAt'); //our date input has the name "myrosterdate"
-            var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-            var options={
-                multidate:true,
-                format: 'yyyy-mm-dd',
-                container: container,
-                todayHighlight: true,
-                autoclose: false,
-            };
-            date_input.datepicker(options);
 
             $("#voiture_destiner").click(function(){
-                alert('test ok')
+
 
                if($("#voiture_destiner").val() === 'location'){
                    $("#tarif1").show();

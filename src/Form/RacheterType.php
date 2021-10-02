@@ -26,6 +26,10 @@ class RacheterType extends AbstractType
             ->add('marque', TextType::class, [
                 'label' => 'Marque:'
             ])
+            ->add('modele', TextType::class, [
+                'label' => 'Modèle:'
+            ])
+
             ->add('kilometrage', NumberType::class, [
                 'label' => 'Kilométrage:'
             ])
@@ -49,6 +53,9 @@ class RacheterType extends AbstractType
             ])
             ->add('nom', TextType::class, [
                 'label' => 'Prénom et Nom:'
+            ])
+            ->add('ville', TextType::class, [
+                'label' => 'Ville:'
             ])
             ->add('telephone', NumberType::class, [
                 'label' => ' Numéro de téléphone:'

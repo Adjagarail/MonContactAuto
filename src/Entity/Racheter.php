@@ -54,6 +54,16 @@ class Racheter
      */
     private $images;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $modele;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $ville;
+
     public function __construct()
     {
         $this->images = new ArrayCollection();
@@ -162,6 +172,30 @@ class Racheter
     public function setTelephone(string $telephone): self
     {
         $this->telephone = $telephone;
+
+        return $this;
+    }
+
+    public function getModele(): ?string
+    {
+        return $this->modele;
+    }
+
+    public function setModele(string $modele): self
+    {
+        $this->modele = $modele;
+
+        return $this;
+    }
+
+    public function getVille(): ?string
+    {
+        return $this->ville;
+    }
+
+    public function setVille(string $ville): self
+    {
+        $this->ville = $ville;
 
         return $this;
     }

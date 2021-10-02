@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
+
 /**
  * @ORM\Entity(repositoryClass=VoitureRepository::class)
  */
@@ -69,6 +70,7 @@ class Voiture
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     * @Assert\DateTime
      */
     private $dispoAt;
 
@@ -133,7 +135,7 @@ class Voiture
     private $transmission;
 
     /**
-     * @ORM\Column(type="datetime", nullable=true)
+     * @ORM\Column(type="date", nullable=true)
      */
     private $dateAt;
 
@@ -146,6 +148,11 @@ class Voiture
      * @ORM\ManyToMany(targetEntity=Modele::class, inversedBy="voitures")
      */
     private $modeles;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $test;
 
 
 
@@ -486,6 +493,18 @@ class Voiture
     public function removeModele(Modele $modele): self
     {
         $this->modeles->removeElement($modele);
+
+        return $this;
+    }
+
+    public function getTest(): ?\DateTimeInterface
+    {
+        return $this->test;
+    }
+
+    public function setTest(\DateTimeInterface $test): self
+    {
+        $this->test = $test;
 
         return $this;
     }

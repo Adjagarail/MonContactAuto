@@ -12,6 +12,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
@@ -125,14 +126,16 @@ class VoitureType extends AbstractType
                 'label' => 'Tarif mensuel',
                 'required' => false
             ])
-            ->add('dispoAt', DateType::class,[
+            ->add('dispoAt', DateTimeType::class,[
                 'data'   => new \DateTime(),
                 'widget' => 'single_text',
+                'attr' => ["data-provide" => "datepicker"],
+                'html5' => false,
                 'label' => 'Disponible du:',
                 'required' => false,
                 'mapped' => true
             ])
-             ->add('disposAt', DateType::class,[
+             ->add('disposAt', DateTimeType::class,[
                 'data'   => new \DateTime(),
                  'widget' => 'single_text',
                 'label' => 'Au:',
