@@ -30,7 +30,7 @@ class ExpertiseType extends AbstractType
                 'label' => 'Nom et Prénom:'
             ])
             ->add('telephonev',TextType::class, [
-                'label' => 'Télépĥone:'
+                'label' => 'Téléphone:'
             ])
             ->add('modele',TextType::class, [
                 'label' => 'Marque et Modèle :'

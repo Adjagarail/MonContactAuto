@@ -1,6 +1,16 @@
 <div class="container">
+    <div class="alert alert-success" role="alert">
+        Vos informations:
+    </div>
+    <br>
     {{ form_start(form) }}
-    {{ form_widget(form) }}
+    {{ form_row(form.prenom) }}
+    {{ form_row(form.nom) }}
+    {{ form_row(form.villed) }}
+    {{ form_row(form.villea) }}
+    {{ form_row(form.calendrierAt) }}
+    {{ form_row(form.flexible) }}
+    {{ form_row(form.telephone) }}
     <button class="btn">Envoyer la demande</button>
     {{ form_end(form) }}
 </div>
