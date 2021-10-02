@@ -21,19 +21,19 @@ class ExpertiseType extends AbstractType
                 'label' => 'Prénom:'
             ])
             ->add('adressev',TextType::class, [
-                'label' => 'Votre adresse:'
+                'label' => 'Adresse:'
             ])
             ->add('telephonec',TextType::class, [
-                'label' => 'Votre téléphone:'
+                'label' => 'Téléphone:'
             ])
             ->add('prenomnomvendeur',TextType::class, [
-                'label' => 'Nom et Prénom vendeur:'
+                'label' => 'Nom et Prénom:'
             ])
             ->add('telephonev',TextType::class, [
-                'label' => 'Télépĥone vendeur:'
+                'label' => 'Télépĥone:'
             ])
             ->add('modele',TextType::class, [
-                'label' => 'Marque et modèle véhicule:'
+                'label' => 'Marque et Modèle :'
             ])
 
             ->add('lien',TextType::class, [

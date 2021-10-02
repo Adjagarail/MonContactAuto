@@ -1,7 +1,26 @@
 <div class="container">
     <br>
     {{ form_start(form) }}
-    {{ form_widget(form) }}
+
+    <div class="alert alert-success" role="alert">
+        Vos informations:
+    </div>
+
+    {{ form_row(form.nom) }}
+    {{ form_row(form.prenom) }}
+    {{ form_row(form.adressev) }}
+    {{ form_row(form.telephonec) }}
+
+    <br>
+    <div class="alert alert-success" role="alert">
+        Informations Vendeur / Véhicule :
+    </div>
+    <br>
+    {{ form_row(form.prenomnomvendeur) }}
+    {{ form_row(form.telephonev) }}
+    {{ form_row(form.modele) }}
+    {{ form_row(form.lien) }}
+    {{ form_row(form.infos) }}
     <button class="btn">Envoyer la demande</button>
     <br>
     <br>
