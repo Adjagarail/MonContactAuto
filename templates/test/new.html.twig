@@ -1,0 +1,24 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}New Test{% endblock %}
+
+{% block body %}
+    <h1>Create new Test</h1>
+
+    {{ include('test/_form.html.twig') }}
+
+    <a href="{{ path('test_index') }}">back to list</a>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#test_test').datepicker({
+                format: 'dd/mm/yyyy',
+                startDate: '-3d',
+                multidate: true,
+                language: 'fr'
+            });
+        });
+    </script>
+{% endblock %}

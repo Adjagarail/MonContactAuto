@@ -20,15 +20,21 @@ class ConvoyageType extends AbstractType
             'non' => 'non'
         ];
         $builder
-            ->add('prenom',TextType::class,[
-                'label' => 'Prénom:'
-            ])
+
             ->add('nom', TextType::class, [
                 'label' => 'Nom:'
             ])
+            ->add('prenom',TextType::class,[
+                'label' => 'Prénom:'
+            ])
+            ->add('marque',TextType::class,[
+                'label' => 'Marque et modèle:'
+            ])
+
             ->add('villed',TextType::class,[
                 'label' => 'Ville de départ:'
             ])
+
             ->add('villea', TextType::class,[
                 'label' => "Ville d'arrivée"
             ])
