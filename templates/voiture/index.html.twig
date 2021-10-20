@@ -10,6 +10,7 @@
         <a href="{{ path('voiture_new') }}" class="btn btn-success">Créer une nouvelle voiture</a>
         <br>
         <br>
+
         <table class="table">
             <thead>
             <tr>
@@ -25,6 +26,7 @@
             </thead>
             <tbody>
             {% for voiture in voitures %}
+                
                 <tr>
                     <td>{{ loop.index }}</td>
                     <td>{{ voiture.marques }}</td>

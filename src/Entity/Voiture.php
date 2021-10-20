@@ -69,8 +69,8 @@ class Voiture
     private $destiner;
 
     /**
-     * @ORM\Column(type="datetime", nullable=true)
-     * @Assert\DateTime
+     * @ORM\Column(type="date", nullable=true)
+     *
      */
     private $dispoAt;
 
@@ -149,10 +149,7 @@ class Voiture
      */
     private $modeles;
 
-    /**
-     * @ORM\Column(type="date")
-     */
-    private $test;
+
 
 
 
@@ -497,17 +494,7 @@ class Voiture
         return $this;
     }
 
-    public function getTest(): ?\DateTimeInterface
-    {
-        return $this->test;
-    }
 
-    public function setTest(\DateTimeInterface $test): self
-    {
-        $this->test = $test;
-
-        return $this;
-    }
     
 
 }

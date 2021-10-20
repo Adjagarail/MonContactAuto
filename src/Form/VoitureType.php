@@ -126,11 +126,11 @@ class VoitureType extends AbstractType
                 'label' => 'Tarif mensuel',
                 'required' => false
             ])
-            ->add('dispoAt', DateTimeType::class,[
-                'data'   => new \DateTime(),
+            ->add('dispoAt', DateType::class,[
                 'widget' => 'single_text',
                 'attr' => ["data-provide" => "datepicker"],
                 'html5' => false,
+                'format' => 'yyyy-MM-dd',
                 'label' => 'Disponible du:',
                 'required' => false,
                 'mapped' => true
