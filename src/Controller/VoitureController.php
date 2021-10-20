@@ -74,7 +74,6 @@ class VoitureController extends AbstractController
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($voiture);
-            dd($voiture);
             $entityManager->flush();
 
             $message = (new \Swift_Message('Information mon contact auto'))
