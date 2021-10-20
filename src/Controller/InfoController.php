@@ -12,12 +12,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/info")
+ * @Route("/administration")
  */
 class InfoController extends AbstractController
 {
     /**
-     * @Route("/", name="info_index", methods={"GET"})
+     * @Route("/info", name="info_index", methods={"GET"})
      */
     public function index(InfoRepository $infoRepository): Response
     {
