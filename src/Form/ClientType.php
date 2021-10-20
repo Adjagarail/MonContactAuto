@@ -25,10 +25,18 @@ class ClientType extends AbstractType
         ];
 
         $builder
-            ->add('prenom')
-            ->add('nom')
-            ->add('telephone')
-            ->add('mail')
+            ->add('prenom',TextType::class,[
+                'label' => 'Prénom:'
+            ])
+            ->add('nom',TextType::class,[
+        'label' => 'Nom:'
+            ])
+            ->add('telephone',TextType::class,[
+                'label' => 'Téléphone:'
+            ])
+            ->add('mail',TextType::class,[
+                'label' => 'E-mail'
+            ])
             ->add('disponibiliter', ChoiceType::class, [
                 'choices' => $choices,
                 'expanded' => false,
@@ -41,13 +49,15 @@ class ClientType extends AbstractType
             ->add('rappel', ChoiceType::class, [
                 'choices' => $choice,
                 'expanded' => true,
-                'label' => 'Me rappeler'
+                'label' => 'Me rappeler:'
             ])
             ->add('rappelAt',DateTimeType::class,[
                 'label' => 'Me rappeler',
                 'attr' => ['id' => 'test'],
             ])
-            ->add('ville')
+            ->add('ville',TextType::class,[
+                'label' => 'Ville:'
+            ])
         ;
     }
 
