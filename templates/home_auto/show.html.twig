@@ -18,7 +18,7 @@
     </section>
     <section id="listing_img_slider">
         {% for voiture in voitures.images%}
-            <div><img src="{{ asset('/uploads/'~voiture.name) }}" class="img-responsive" alt="image"></div>
+            <div><img src="{{ asset('/uploads/'~voiture.name) }}" class="img-responsive" alt="image" style="height: 250px !important;"></div>
         {% endfor %}
     </section>
 <section class="listing_other_info secondary-bg">
