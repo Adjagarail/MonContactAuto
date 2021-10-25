@@ -36,7 +36,7 @@ class HomeController extends AbstractController
         $voitures = $voitureRepository->findCar($data);
         if($form->isSubmitted() && $form->isValid()){
 
-            dd($request);
+
 
             return $this->render('home/render.html.twig', [
                 'voituresSearch' => $voitures,
