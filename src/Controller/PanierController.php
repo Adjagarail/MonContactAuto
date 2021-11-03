@@ -20,6 +20,7 @@ class PanierController extends AbstractController
 
         $panierWithData = [];
 
+
         foreach ($panier as $id => $quantity){
             $panierWithData[] = [
                 'voiture' => $voitureRepository->find($id),

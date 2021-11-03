@@ -49,10 +49,6 @@ class Racheter
      */
     private $telephone;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Image::class, mappedBy="voitures",orphanRemoval=true, cascade={"persist"})
-     */
-    private $images;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -64,40 +60,17 @@ class Racheter
      */
     private $ville;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Pictures::class, mappedBy="racheter",cascade={"persist"})
+     */
+    private $pictures;
+
     public function __construct()
     {
-        $this->images = new ArrayCollection();
+        $this->pictures = new ArrayCollection();
     }
 
-    /**
-     * @return Collection|Image[]
-     */
-    public function getImages(): Collection
-    {
-        return $this->images;
-    }
 
-    public function addImage(Image $image): self
-    {
-        if (!$this->images->contains($image)) {
-            $this->images[] = $image;
-            $image->setVoitures($this);
-        }
-
-        return $this;
-    }
-
-    public function removeImage(Image $image): self
-    {
-        if ($this->images->removeElement($image)) {
-            // set the owning side to null (unless already changed)
-            if ($image->getVoitures() === $this) {
-                $image->setVoitures(null);
-            }
-        }
-
-        return $this;
-    }
 
     public function getId(): ?int
     {
@@ -199,5 +172,36 @@ class Racheter
 
         return $this;
     }
+
+    /**
+     * @return Collection|Pictures[]
+     */
+    public function getPictures(): Collection
+    {
+        return $this->pictures;
+    }
+
+    public function addPicture(Pictures $picture): self
+    {
+        if (!$this->pictures->contains($picture)) {
+            $this->pictures[] = $picture;
+            $picture->setRacheter($this);
+        }
+
+        return $this;
+    }
+
+    public function removePicture(Pictures $picture): self
+    {
+        if ($this->pictures->removeElement($picture)) {
+            // set the owning side to null (unless already changed)
+            if ($picture->getRacheter() === $this) {
+                $picture->setRacheter(null);
+            }
+        }
+
+        return $this;
+    }
     
 }
+

@@ -1,9 +1,9 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block title %}Client index{% endblock %}
 
 {% block body %}
-   <div class="container">
+   <div class="container-fluid">
 
        <br>
          <h1>Listes des clients</h1>
@@ -32,8 +32,8 @@
                    <td>{{ client.disponibiliter }}</td>
                    <td>{{ client.ville }}</td>
                    <td>
-                       <a href="{{ path('client_show', {'id': client.id}) }}">show</a>
-                       <a href="{{ path('client_edit', {'id': client.id}) }}">edit</a>
+                       <a href="{{ path('client_show', {'id': client.id}) }}">Voir Détails</a>
+                       <a href="{{ path('client_edit', {'id': client.id}) }}">Voir la voiture</a>
                    </td>
                </tr>
            {% else %}

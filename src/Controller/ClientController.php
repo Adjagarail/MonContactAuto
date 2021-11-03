@@ -21,10 +21,22 @@ class ClientController extends AbstractController
     /**
      * @Route("/", name="client_index", methods={"GET"})
      */
-    public function index(ClientRepository $clientRepository): Response
+    public function index(ClientRepository $clientRepository, VoitureRepository $voitureRepository): Response
     {
+
+        $voitures1 = $clientRepository->findAll();
+
+        $voituresData = [];
+        foreach ($voitures1 as $idvoiture){
+            $voituresData[] = [
+                'voiture' => $voitureRepository->find($idvoiture)
+            ];
+        }
+        ;
+
         return $this->render('client/index.html.twig', [
             'clients' => $clientRepository->findAll(),
+            'voitureData' => $voituresData,
         ]);
     }
 

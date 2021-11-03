@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Repository\ClientRepository;
+use App\Repository\RacheterRepository;
 use App\Repository\SubscribeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -12,16 +14,19 @@ class SendmailController extends AbstractController
     /**
      * @Route("/administration", name="sendmail")
      */
-    public function index(SubscribeRepository $subscribeRepository): Response
+    public function index(SubscribeRepository $subscribeRepository, ClientRepository $clientRepository, RacheterRepository $racheterRepository): Response
     {
 
         $adressemail = $subscribeRepository->findContactSubscribe();
 
-        $adressemail2 = array_column($adressemail,'email');
-
+        $numberCustomers = $clientRepository->findAll();
+        $numberSells = $racheterRepository->findAll();
 
 
         return $this->render('sendmail/index.html.twig', [
+
+            "numberCustomers" => $numberCustomers,
+            "numberSells" => $numberSells,
 
         ]);
     }

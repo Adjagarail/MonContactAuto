@@ -3,7 +3,6 @@
 {% block title %}Racheter index{% endblock %}
 
 {% block body %}
-    <h1>Racheter index</h1>
 
     <table class="table">
         <thead>
@@ -15,6 +14,7 @@
                 <th>Enpanne</th>
                 <th>Nom</th>
                 <th>Telephone</th>
+                <th>Image Voiture</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -27,10 +27,16 @@
                 <td>{{ racheter.annes }}</td>
                 <td>{{ racheter.enpanne }}</td>
                 <td>{{ racheter.nom }}</td>
-                <td>{{ racheter.telephone }}</td>
+               <td>{{ racheter.telephone }}</td>
+{#                <td> <img src="{{ asset('/uploads/'~racheter.name) }}" alt="" class="img-responsive" style="height: 250px !important;"></td>#}
+                <td> {% for image in  racheter.pictures %}
+                    {% if racheter.pictures|first.name == image.name %}
+                        <img src="{{ asset('/uploads/'~image.name) }}" alt="" class="img-responsive" style="height: 250px !important;">
+                    {% endif %}
+                {% endfor %}
+                </td>
                 <td>
-                    <a href="{{ path('racheter_show', {'id': racheter.id}) }}">show</a>
-                    <a href="{{ path('racheter_edit', {'id': racheter.id}) }}">edit</a>
+                    <a href="{{ path('racheter_show', {'id': racheter.id}) }}">Voir</a>
                 </td>
             </tr>
         {% else %}
@@ -40,6 +46,4 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('racheter_new') }}">Create new</a>
 {% endblock %}
