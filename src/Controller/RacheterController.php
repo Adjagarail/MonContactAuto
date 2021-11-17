@@ -53,6 +53,7 @@ class RacheterController extends AbstractController
      */
     public function show(Racheter $racheter): Response
     {
+
         return $this->render('racheter/show.html.twig', [
             'racheter' => $racheter,
         ]);
