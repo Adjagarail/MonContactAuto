@@ -5,6 +5,7 @@ $(document).ready(function(){
             url: "/ajout/ajax/email/"+email,
             type: 'POST'
         }).done(function (data) {
+            window.location.reload();
             console.log(data)
         })
     });

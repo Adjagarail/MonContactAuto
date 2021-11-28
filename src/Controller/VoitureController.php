@@ -78,7 +78,7 @@ class VoitureController extends AbstractController
 
             $message = (new \Swift_Message('Information mon contact auto'))
                 ->setFrom('sowoumarousmane@gmail.com')
-                ->setTo($contact1)
+                ->setTo('sowoumarousmane@gmail.com')
                 ->setBody(
                     $this->renderView(
                         'email.html.twig'
