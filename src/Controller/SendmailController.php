@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Repository\ClientRepository;
 use App\Repository\ConvoyageRepository;
+use App\Repository\DemenagementRepository;
 use App\Repository\ExpertiseRepository;
 use App\Repository\RacheterRepository;
 use App\Repository\RechercheRepository;
@@ -21,7 +22,7 @@ class SendmailController extends AbstractController
     public function index(SubscribeRepository $subscribeRepository, ClientRepository $clientRepository,
                           RacheterRepository $racheterRepository, ConvoyageRepository $convoyageRepository,
                           ExpertiseRepository $expertiseRepository, RechercheRepository $rechercheRepository,
-                            TransportRepository $transportRepository
+                            DemenagementRepository $transportRepository
                             ): Response
     {
 

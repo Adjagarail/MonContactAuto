@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use Symfony\Component\Mime\Email;
 use App\Form\ContactFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -23,21 +22,20 @@ class ContactController extends AbstractController
         if($form->isSubmitted()&& $form->isValid()){
             $contact = $form->getData();
          //   $message = (new \Swift_Message('Nouveau contact'))
-            $message = (new Email())
+            $message = (new \Swift_Message('Nouveau contact'))
                 // On attribue l'expéditeur
-                ->from($form->get('email')->getData())
+                ->setFrom($form->get('email')->getData())
                 // On attribue le destinataire
-                ->to('sowoumarousmane@gmail.com')
-                ->subject('test ok')
+                ->setTo('sowoumarousmane@gmail.com')
                 // On crée le texte avec la vue
-                ->text(
+                ->setBody(
                     $this->renderView(
                         'contact/email.html.twig', compact('contact')
                     ),
                     'text/html'
                 )
             ;
-            $mailerInterface->send($message);
+            $mailer->send($message);
             $this->addFlash('message', 'Votre message a été transmis, nous vous répondrons dans les meilleurs délais.');
         }
         return $this->render('contact/index.html.twig', [

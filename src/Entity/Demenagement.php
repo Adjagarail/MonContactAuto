@@ -58,7 +58,7 @@ class Demenagement
     private $descriptionbagage;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $bagage;
 
