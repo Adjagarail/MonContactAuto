@@ -120,16 +120,16 @@
                         <div class="float-start mini-stat-img me-4">
                             <img src="admin_assets/images/services-icon/04.png" alt="">
                         </div>
-                        <h5 class="font-size-16 text-uppercase text-white-50">Etre déposé</h5>
+                        <h5 class="font-size-16 text-uppercase text-white-50">Déménagement</h5>
                         {% for numberDeposit in numberDeposits %}
-                            {% if numberDeposit.transport == 'deposer' %}
+                            {% if numberDeposit.transport == 'demenagement' %}
                                 <h4 class="fw-medium font-size-24">{{ numberDeposits|length }}</h4>
                             {% endif %}
                         {% endfor %}
                     </div>
                     <div class="pt-2">
                         <div class="float-end">
-                            <a href="{{ path('transport1deposer-list') }}" class="text-white-50"><i class="mdi mdi-arrow-right h5"></i></a>
+                            <a href="{{ path('demenagement-list') }}" class="text-white-50"><i class="mdi mdi-arrow-right h5"></i></a>
                         </div>
 
                         <p class="text-white-50 mb-0 mt-1">Cliquez pour voir la liste</p>
@@ -144,16 +144,16 @@
                         <div class="float-start mini-stat-img me-4">
                             <img src="admin_assets/images/services-icon/04.png" alt="">
                         </div>
-                        <h5 class="font-size-16 text-uppercase text-white-50">Déménagement</h5>
+                        <h5 class="font-size-16 text-uppercase text-white-50">Etre déposé</h5>
                         {% for numberDeposit in numberDeposits %}
-                            {% if numberDeposit.transport == 'demenagement' %}
-                        <h4 class="fw-medium font-size-24">{{ numberDeposits|length }}</h4>
+                            {% if numberDeposit.transport == 'deposer' %}
+                                <h4 class="fw-medium font-size-24">{{ numberDeposits|length }}</h4>
                             {% endif %}
                         {% endfor %}
                     </div>
                     <div class="pt-2">
                         <div class="float-end">
-                            <a href="{{ path('demenagement-list') }}" class="text-white-50"><i class="mdi mdi-arrow-right h5"></i></a>
+                            <a href="{{ path('transport1deposer-list') }}" class="text-white-50"><i class="mdi mdi-arrow-right h5"></i></a>
                         </div>
 
                         <p class="text-white-50 mb-0 mt-1">Cliquez pour voir la liste</p>
