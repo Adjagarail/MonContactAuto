@@ -1,0 +1,11 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}New Pres{% endblock %}
+
+{% block body %}
+    <h1>Create new Pres</h1>
+
+    {{ include('pres/_form.html.twig') }}
+
+    <a href="{{ path('pres_index') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Pres index{% endblock %}
+
+{% block body %}
+    <h1>Pres index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Desription</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pre in pres %}
+            <tr>
+                <td>{{ pre.id }}</td>
+                <td>{{ pre.desription }}</td>
+                <td>
+                    <a href="{{ path('pres_show', {'id': pre.id}) }}">show</a>
+                    <a href="{{ path('pres_edit', {'id': pre.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('pres_new') }}">Create new</a>
+{% endblock %}
