@@ -363,6 +363,9 @@
     "symfony/orm-pack": {
         "version": "v2.1.0"
     },
+    "symfony/password-hasher": {
+        "version": "v5.4.2"
+    },
     "symfony/phpunit-bridge": {
         "version": "5.1",
         "recipe": {
@@ -398,6 +401,9 @@
     },
     "symfony/polyfill-php80": {
         "version": "v1.22.1"
+    },
+    "symfony/polyfill-php81": {
+        "version": "v1.23.0"
     },
     "symfony/polyfill-uuid": {
         "version": "v1.23.0"
@@ -598,6 +604,12 @@
         "files": [
             "config/packages/reset_password.yaml"
         ]
+    },
+    "tijsverkoyen/css-to-inline-styles": {
+        "version": "2.2.4"
+    },
+    "twig/cssinliner-extra": {
+        "version": "v3.3.4"
     },
     "twig/extra-bundle": {
         "version": "v3.3.0"
