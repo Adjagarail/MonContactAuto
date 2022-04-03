@@ -139,7 +139,7 @@ class VoitureRepository extends ServiceEntityRepository
         return $this->paginator->paginate(
             $query,
             $searchData->page,
-            2
+            10
         );
     }
     /**
@@ -214,8 +214,8 @@ class VoitureRepository extends ServiceEntityRepository
         $query = $query->getQuery();
         return $this->paginator->paginate(
             $query,
-            1,
-            1
+            $locationData->page,
+            10
         );
     }
 
@@ -269,7 +269,7 @@ class VoitureRepository extends ServiceEntityRepository
         return $this->paginator->paginate(
             $query,
             $locationData->page,
-            12
+            10
         );
     }
 }
