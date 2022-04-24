@@ -44,6 +44,7 @@ class MailController extends AbstractController
                 ),
                 'text/html'
             );
+            $mailer->send($message);
             dump($mailer->send($message));
         }
 
