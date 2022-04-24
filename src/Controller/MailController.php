@@ -33,11 +33,10 @@ class MailController extends AbstractController
         $mail = new Mail();
         $form = $this->createForm(MailType::class, $mail);
 
-
-        if ($form->isSubmitted() && $form->isValid()) {
+       // if ($form->isSubmitted() && $form->isValid()) {
             $message = new \Swift_Message('Test email');
-            $message->setFrom('oumarsow.dev@gmail.com');
-            $message->setTo('oumarsow.dev@gmail.com');
+            $message->setFrom("admin@moncontactauto.com");
+            $message->setTo("oumarsow.dev@gmail.com");
             $message->setBody(
                 $this->renderView(
                     'testmail/email-confirmation.twig'
@@ -45,8 +44,7 @@ class MailController extends AbstractController
                 'text/html'
             );
             $mailer->send($message);
-            dump($mailer->send($message));
-        }
+       // }
 
         return $this->render('mail/new.html.twig', [
             'mail' => $mail,

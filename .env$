@@ -14,7 +14,7 @@
 # https://symfony.com/doc/current/best_practices.html#use-environment-variables-for-infrastructure-configuration
 
 ###> symfony/framework-bundle ###
-APP_ENV=dev
+APP_ENV=prod
 APP_SECRET=ce5b62fe8208844b10d2c98a387b93de
 #MAIL_USER=admin@moncontactauto.com
 #MAIL_PASS=Passer@2021
@@ -41,6 +41,6 @@ DATABASE_URL="sqlite:///%kernel.project_dir%/var/data.db"
 # Delivery is disabled by default via "null://localhost"
 #MAILER_DSN=sendmail://mail.infomaniak.com
 MAILER_DSN=smtp://admin@moncontactauto.com:Passer@2021@mail.infomaniak.com:587
-MAILER_URL=sendmail://mail.infomaniak.com
+#MAILER_URL=sendmail://mail.infomaniak.com
 #MAILER_URL=smtp://smtp.example.com:465?encryption=ssl&auth_mode=login&username=admin@example.com&password=s$cret
 ###< symfony/swiftmailer-bundle ###

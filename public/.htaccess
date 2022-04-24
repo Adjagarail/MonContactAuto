@@ -47,7 +47,11 @@ DirectoryIndex index.php
     #   following RewriteCond (best solution)
     RewriteCond %{ENV:REDIRECT_STATUS} =""
     RewriteRule ^index\.php(?:/(.*)|$) %{ENV:BASE}/$1 [R=301,L]
-
+    RewriteEngine On
+   ####
+   RewriteCond %{HTTPS} off [OR]
+   RewriteCond %{HTTP_HOST} !^www. [NC]
+   RewriteRule (.*) https://www.moncontactauto.com/$1 [R=301,L]
     # If the requested filename exists, simply serve it.
     # We only want to let Apache serve files and not directories.
     # Rewrite all other queries to the front controller.
