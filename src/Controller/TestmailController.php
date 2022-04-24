@@ -13,18 +13,22 @@ class TestmailController extends AbstractController
     /**
      * @Route("/testmail", name="testmail")
      */
-    public function index(MailerInterface $mailer): Response
+    public function index(\Swift_Mailer $mailer): Response
     {
-        $email = (new TemplatedEmail())
-            ->from('sowoumarousmane@gmail.com')
-            ->to('sowoumarousmane@gmail.com')
-            ->subject('Bonjour Oumar Ousmane Sow')
-            ->htmlTemplate('testmail/email-confirmation.twig')
-            ->context([
-                'delivery_date' => date_create('+3 days'),
-                'order_number' => rand(5 , 5000)
-            ]);
-        return $this->render('testmail/index.html.twig', [
+
+        
+
+
+        $message = new \Swift_Message('Test email');
+        $message->setFrom('sowoumarousmane@gmail.com');
+        $message->setTo('sowoumarousmane@gmail.com');
+        $message->setBody(
+            $this->renderView(
+                'testmail/email-confirmation.twig'
+            ),
+            'text/html'
+        );
+        return $this->render('testmail/email-confirmation.twig', [
             'controller_name' => 'TestmailController',
         ]);
     }

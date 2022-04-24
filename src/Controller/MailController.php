@@ -28,18 +28,22 @@ class MailController extends AbstractController
     /**
      * @Route("/new", name="mail_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, \Swift_Mailer $mailer): Response
     {
         $mail = new Mail();
         $form = $this->createForm(MailType::class, $mail);
-        $form->handleRequest($request);
+
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($mail);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('mail_index');
+            $message = new \Swift_Message('Test email');
+            $message->setFrom('sowoumarousmane@gmail.com');
+            $message->setTo('sowoumarousmane@gmail.com');
+            $message->setBody(
+                $this->renderView(
+                    'testmail/email-confirmation.twig'
+                ),
+                'text/html'
+            );
         }
 
         return $this->render('mail/new.html.twig', [
