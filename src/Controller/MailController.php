@@ -36,15 +36,15 @@ class MailController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $message = new \Swift_Message('Test email');
-            $message->setFrom('sowoumarousmane@gmail.com');
-            $message->setTo('sowoumarousmane@gmail.com');
+            $message->setFrom('oumarsow.dev@gmail.com');
+            $message->setTo('oumarsow.dev@gmail.com');
             $message->setBody(
                 $this->renderView(
                     'testmail/email-confirmation.twig'
                 ),
                 'text/html'
             );
-            $mailer->send($message);
+            dump($mailer->send($message));
         }
 
         return $this->render('mail/new.html.twig', [
